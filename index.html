@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ozarks Explorer</title>
+<meta name="description" content="LiDAR hillshade, slope and historical USGS topo maps for finding lost structures in the Ozarks.">
+<meta name="theme-color" content="#1d2421">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<style>
+/* Layout: full-screen map, floating search on top, layer sheet docked at bottom (thumb reach). */
+:root{
+  --bg:#f3f4f1; --panel:#ffffff; --fg:#1d2421; --muted:#5d6762; --line:#d7dbd6;
+  --accent:#b8560f; --accent-fg:#ffffff; --chip:#eef0ec;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#141917; --panel:#1d2421; --fg:#e8ebe6; --muted:#9aa49e; --line:#33403a;
+  --accent:#e58a3f; --accent-fg:#141917; --chip:#26302b; color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.4 var(--body);overflow:hidden}
+#map{position:fixed;inset:0;background:var(--bg)}
+.top{position:fixed;z-index:1000;left:0;right:0;top:0;
+  padding:calc(env(safe-area-inset-top,0px) + 10px) max(12px,env(safe-area-inset-right,0px)) 0 max(12px,env(safe-area-inset-left,0px));
+  display:flex;gap:8px;pointer-events:none}
+.top>*{pointer-events:auto}
+#search{flex:1;min-width:0;display:flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+#q{flex:1;min-width:0;border:0;background:transparent;color:var(--fg);font:16px var(--body);padding:11px 12px;outline:none}
+#search button,.iconbtn{border:0;background:transparent;color:var(--fg);font:600 15px var(--display);letter-spacing:.04em;text-transform:uppercase;padding:0 12px;cursor:pointer}
+.iconbtn{background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.18);width:46px;padding:0;display:grid;place-items:center}
+.iconbtn svg{width:22px;height:22px}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#results{position:fixed;z-index:1001;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));
+  top:calc(env(safe-area-inset-top,0px) + 60px);background:var(--panel);border:1px solid var(--line);border-radius:10px;max-height:45vh;overflow:auto;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+#results button{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--fg);padding:10px 12px;font:14px var(--body);cursor:pointer}
+#results button:last-child{border-bottom:0}
+
+.sheet{position:fixed;z-index:1000;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);
+  box-shadow:0 -4px 18px rgba(0,0,0,.18);border-radius:14px 14px 0 0;
+  padding:10px max(14px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 10px) max(14px,env(safe-area-inset-left,0px));
+  display:grid;gap:10px}
+.row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.row::-webkit-scrollbar{display:none}
+.lbl{font:600 12px var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--chip);color:var(--fg);border-radius:999px;padding:8px 13px;font:500 14px var(--body);cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.blend{display:flex;align-items:center;gap:10px}
+.blend input{flex:1;accent-color:var(--accent)}
+.blend output{font:500 13px var(--mono);width:3.2em;text-align:right;color:var(--muted)}
+.readout{display:flex;align-items:center;gap:8px;font:13px var(--mono);color:var(--muted);flex-wrap:wrap}
+.readout span{font-variant-numeric:tabular-nums}
+.readout a,.readout button{font:600 13px var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:none}
+.collapse{font:600 12px var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);background:none;border:0;cursor:pointer;padding:2px 0}
+.sheet.min .full{display:none}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+.leaflet-container{font:13px var(--body)}
+.leaflet-control-scale{margin-bottom:6px!important}
+.crosshair{position:fixed;z-index:999;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;pointer-events:none;opacity:.75}
+.crosshair::before,.crosshair::after{content:"";position:absolute;background:var(--accent)}
+.crosshair::before{left:10px;top:0;width:2px;height:22px}
+.crosshair::after{top:10px;left:0;height:2px;width:22px}
+.site{width:14px;height:14px;border-radius:3px;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.45)}
+.s-school{background:#c0392b}.s-church{background:#6c3fb5}.s-po{background:#1f7a8c}.s-town{background:#d4a017}.s-other{background:#4a4a4a}
+.chip i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0}
+.cl{background:var(--accent);color:var(--accent-fg);border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font:600 13px var(--display);box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.pop h3{margin:0 0 2px;font:600 18px var(--display);letter-spacing:.02em}
+.pop p{margin:0 0 8px;color:#555;font-size:13px}
+.pop .acts{display:flex;flex-wrap:wrap;gap:6px}
+.pop .acts a,.pop .acts button{font:600 13px var(--display);letter-spacing:.05em;text-transform:uppercase;border:1px solid #ccc;border-radius:6px;padding:6px 9px;background:#f4f4f2;color:#1d2421;text-decoration:none;cursor:pointer}
+.me{width:16px;height:16px;border-radius:50%;background:#2a7de1;border:3px solid #fff;box-shadow:0 0 0 2px rgba(42,125,225,.35)}
+</style>
+</head>
+<body>
+<div id="map" role="application" aria-label="Map"></div>
+<div class="crosshair" aria-hidden="true"></div>
+
+<div class="top">
+  <form id="search" role="search">
+    <input id="q" type="search" placeholder="Place, or 36.95, -92.66" autocomplete="off" enterkeyhint="search" aria-label="Search a place or coordinates">
+    <button type="submit">Go</button>
+  </form>
+  <button class="iconbtn" id="locate" aria-label="Show my location" title="Show my location">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+  </button>
+</div>
+<div id="results" hidden></div>
+
+<div class="sheet" id="sheet">
+  <div class="lbl"><span>Ground layer</span><button class="collapse" id="toggle" aria-expanded="true">Hide</button></div>
+  <div class="row full" id="baseRow"></div>
+  <div class="lbl full"><span>On top</span></div>
+  <div class="row full" id="topRow"></div>
+  <div class="lbl full"><span>Lost sites (USGS records) <span id="sitecount"></span></span></div>
+  <div class="row full" id="siteRow"></div>
+  <div class="blend full">
+    <label class="lbl" for="op" style="margin:0">Blend</label>
+    <input id="op" type="range" min="0" max="100" value="55">
+    <output id="opv" for="op">55%</output>
+  </div>
+  <div class="readout">
+    <span id="coord">—</span>
+    <button id="copy" type="button">Copy</button>
+    <a id="gmaps" href="#" target="_blank" rel="noopener">Directions</a>
+  </div>
+  <p class="note full" id="note"></p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+(function(){
+const R = 6378137, HALF = Math.PI * R;
+
+// ArcGIS ImageServer -> Leaflet tiles via exportImage in Web Mercator
+const ImageTiles = L.TileLayer.extend({
+  initialize(url, params, opts){ this._u = url; this._p = params; L.TileLayer.prototype.initialize.call(this, '', opts); },
+  getTileUrl(c){
+    const n = Math.pow(2, c.z), size = 2 * HALF / n;
+    const xmin = -HALF + c.x * size, ymax = HALF - c.y * size;
+    const bbox = [xmin, ymax - size, xmin + size, ymax].map(v => v.toFixed(2)).join(',');
+    return this._u + '/exportImage?bbox=' + bbox + '&bboxSR=3857&imageSR=3857&size=512,512&f=image&' + this._p;
+  }
+});
+const DEP = 'https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer';
+const HIST = 'https://historical1.arcgis.com/arcgis/rest/services/USA_Historical_Topo_Maps/ImageServer';
+const rr = f => 'format=png&renderingRule=' + encodeURIComponent(JSON.stringify({rasterFunction: f}));
+const mosaic = asc => 'format=jpgpng&mosaicRule=' + encodeURIComponent(JSON.stringify(
+  {mosaicMethod:'esriMosaicAttribute', sortField:'Date_On_Map', sortValue: asc ? '1800' : '2100', ascending:true}));
+const usgsAttr = 'USGS 3DEP / The National Map';
+const histAttr = 'USGS Historical Topographic Map Collection via Esri';
+
+const LAYERS = {
+  hill:  {name:'LiDAR hillshade', note:'Bare earth with trees removed. Look for straight edges, square pits and flat pads on slopes.', make:()=>new ImageTiles(DEP, rr('Hillshade Multidirectional'), {maxZoom:20, maxNativeZoom:19, attribution:usgsAttr})},
+  slope: {name:'LiDAR slope', note:'Steepness. Foundations, roadbeds and dams show as sharp lines. Often clearer than hillshade.', make:()=>new ImageTiles(DEP, rr('Slope Map'), {maxZoom:20, maxNativeZoom:19, attribution:usgsAttr})},
+  old:   {name:'Oldest topo', note:'Earliest USGS edition on file for each spot (often 1880s–1950s). Black squares = buildings.', make:()=>new ImageTiles(HIST, mosaic(true), {maxZoom:18, maxNativeZoom:17, attribution:histAttr})},
+  late:  {name:'Newest old topo', note:'Latest historical edition (often 1960s–1990s). Compare with Oldest to see what disappeared.', make:()=>new ImageTiles(HIST, mosaic(false), {maxZoom:18, maxNativeZoom:17, attribution:histAttr})},
+  photo: {name:'Aerial today', note:'Current USGS aerial photo.', make:()=>L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}', {maxZoom:20, maxNativeZoom:16, attribution:usgsAttr})},
+  topo:  {name:'Topo today', note:'Current USGS topo with roads and names.', make:()=>L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}', {maxZoom:20, maxNativeZoom:16, attribution:usgsAttr})}
+};
+const cache = {}; const get = k => cache[k] || (cache[k] = LAYERS[k].make());
+
+const store = {
+  get(k, d){ try { const v = localStorage.getItem('ozx.' + k); return v == null ? d : v; } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem('ozx.' + k, v); } catch(e){} }
+};
+
+const map = L.map('map', {zoomControl:false, attributionControl:true, tap:true}).setView([37.0, -92.6], 9);
+L.control.scale({imperial:true, metric:false, position:'bottomright'}).addTo(map);
+
+let base = store.get('base', 'hill'), top = store.get('top', 'old'), op = +store.get('op', 55);
+if (!LAYERS[base]) base = 'hill';
+if (top !== 'none' && !LAYERS[top]) top = 'old';
+
+function render(){
+  Object.keys(cache).forEach(k => { if (map.hasLayer(cache[k])) map.removeLayer(cache[k]); });
+  get(base).setOpacity(1).addTo(map).setZIndex(1);
+  if (top !== 'none' && top !== base) get(top).setOpacity(op/100).addTo(map).setZIndex(2);
+  chips('baseRow', base, k => { base = k; store.set('base', k); render(); }, false);
+  chips('topRow', top, k => { top = k; store.set('top', k); render(); }, true);
+  document.getElementById('op').disabled = top === 'none' || top === base;
+  document.getElementById('note').textContent = LAYERS[base].note;
+}
+function chips(id, sel, onPick, withNone){
+  const row = document.getElementById(id); row.textContent = '';
+  const keys = Object.keys(LAYERS).filter(k => !(withNone && k === base));
+  if (withNone) keys.unshift('none');
+  keys.forEach(k => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip';
+    b.textContent = k === 'none' ? 'Nothing' : LAYERS[k].name;
+    b.setAttribute('aria-pressed', k === sel);
+    b.onclick = () => onPick(k);
+    row.appendChild(b);
+  });
+}
+const opIn = document.getElementById('op'), opOut = document.getElementById('opv');
+opIn.value = op; opOut.textContent = op + '%';
+opIn.oninput = () => { op = +opIn.value; opOut.textContent = op + '%'; store.set('op', op); if (top !== 'none' && cache[top]) cache[top].setOpacity(op/100); };
+
+// Position in the link: #zoom/lat/lon  (add /pin to drop a marker)
+let pin = null;
+function readHash(){
+  const p = location.hash.replace('#','').split('/');
+  if (p.length >= 3 && !isNaN(+p[0]) && !isNaN(+p[1]) && !isNaN(+p[2])) {
+    map.setView([+p[1], +p[2]], +p[0]);
+    if (p[3] === 'pin') { if (pin) pin.remove(); pin = L.marker([+p[1], +p[2]]).addTo(map); }
+    return true;
+  }
+  return false;
+}
+if (!readHash()) {
+  const last = store.get('view', '');
+  if (last) { const v = last.split('/'); if (v.length === 3) map.setView([+v[1], +v[2]], +v[0]); }
+}
+window.addEventListener('hashchange', readHash);
+
+function update(){
+  const c = map.getCenter(), z = map.getZoom();
+  const lat = c.lat.toFixed(5), lon = c.lng.toFixed(5);
+  document.getElementById('coord').textContent = lat + ', ' + lon;
+  document.getElementById('gmaps').href = 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon;
+  store.set('view', z + '/' + lat + '/' + lon);
+  const h = '#' + z + '/' + lat + '/' + lon + (location.hash.endsWith('/pin') ? '/pin' : '');
+  history.replaceState(null, '', h);
+}
+map.on('moveend', update); update();
+
+document.getElementById('copy').onclick = async e => {
+  const t = document.getElementById('coord').textContent, b = e.currentTarget;
+  try { await navigator.clipboard.writeText(t); b.textContent = 'Copied'; }
+  catch(err){ const r = document.createRange(); r.selectNodeContents(document.getElementById('coord')); getSelection().removeAllRanges(); getSelection().addRange(r); b.textContent = 'Selected'; }
+  setTimeout(() => b.textContent = 'Copy', 1500);
+};
+
+// GPS
+let me = null, acc = null;
+document.getElementById('locate').onclick = () => map.locate({setView:true, maxZoom:17, enableHighAccuracy:true});
+map.on('locationfound', e => {
+  if (me) { me.remove(); acc.remove(); }
+  acc = L.circle(e.latlng, {radius:e.accuracy, weight:1, color:'#2a7de1', fillOpacity:.08}).addTo(map);
+  me = L.marker(e.latlng, {icon:L.divIcon({className:'', html:'<div class="me"></div>', iconSize:[16,16]})}).addTo(map);
+});
+map.on('locationerror', () => { document.getElementById('note').textContent = 'Location blocked. Allow location for this site in your browser settings.'; });
+
+// Search: coordinates or place name (OpenStreetMap Nominatim)
+const res = document.getElementById('results');
+document.getElementById('search').onsubmit = async e => {
+  e.preventDefault(); const q = document.getElementById('q').value.trim(); if (!q) return;
+  const m = q.match(/^\s*(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)\s*$/);
+  if (m) { go(+m[1], +m[2]); return; }
+  res.hidden = false; res.textContent = 'Searching…';
+  try {
+    const r = await fetch('https://nominatim.openstreetmap.org/search?format=json&limit=8&countrycodes=us&viewbox=-95.5,39.0,-89.5,35.0&q=' + encodeURIComponent(q));
+    const list = await r.json(); res.textContent = '';
+    if (!list.length) { res.textContent = 'No match. Try a town or county name, or paste coordinates.'; return; }
+    list.forEach(p => { const b = document.createElement('button'); b.textContent = p.display_name; b.onclick = () => go(+p.lat, +p.lon); res.appendChild(b); });
+  } catch(err) { res.textContent = 'Search is unavailable right now. Paste coordinates instead.'; }
+};
+function go(lat, lon){ res.hidden = true; document.getElementById('q').blur(); map.setView([lat, lon], 16); if (pin) pin.remove(); pin = L.marker([lat, lon]).addTo(map); }
+map.on('click', () => { res.hidden = true; });
+
+// Collapse sheet
+const sheet = document.getElementById('sheet'), tg = document.getElementById('toggle');
+function setMin(min){ sheet.classList.toggle('min', min); tg.textContent = min ? 'Layers' : 'Hide'; tg.setAttribute('aria-expanded', !min); store.set('min', min ? '1' : ''); }
+tg.onclick = () => setMin(!sheet.classList.contains('min'));
+setMin(store.get('min', '') === '1');
+
+render();
+
+// Lost sites: USGS GNIS features marked "(historical)" inside the Ozark Highlands
+const GROUPS = {school:'Old schools', church:'Old churches', town:'Lost towns', po:'Old post offices', other:'Mills, mines & other'};
+let on = new Set((store.get('sites', 'school,church,town,po,other') || '').split(',').filter(Boolean));
+let allSites = [];
+const cluster = L.markerClusterGroup({showCoverageOnHover:false, maxClusterRadius:45, disableClusteringAtZoom:14,
+  iconCreateFunction: c => L.divIcon({className:'', html:'<div class="cl" style="width:34px;height:34px">' + c.getChildCount() + '</div>', iconSize:[34,34]})});
+map.addLayer(cluster);
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+function popup(p, lat, lon){
+  const q = encodeURIComponent('"' + p.n + '" ' + p.co + ' County Missouri');
+  return '<div class="pop"><h3>' + esc(p.n) + '</h3><p>' + esc(p.c) + ' · ' + esc(p.co) + ' County · ' + esc(p.q) + ' quad<br>' + lat.toFixed(5) + ', ' + lon.toFixed(5) + '</p>' +
+    '<div class="acts"><button type="button" onclick="window.ozxZoom(' + lat + ',' + lon + ')">Zoom in</button>' +
+    '<a target="_blank" rel="noopener" href="https://www.reddit.com/search/?q=' + q + '">Reddit</a>' +
+    '<a target="_blank" rel="noopener" href="https://www.facebook.com/search/top/?q=' + q + '">Facebook</a>' +
+    '<a target="_blank" rel="noopener" href="https://www.google.com/search?q=' + q + '">Web</a>' +
+    '<a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon + '">Directions</a></div></div>';
+}
+window.ozxZoom = (lat, lon) => { map.closePopup(); map.setView([lat, lon], 17); };
+function drawSites(){
+  cluster.clearLayers();
+  const ms = allSites.filter(f => on.has(f.properties.g)).map(f => {
+    const [lon, lat] = f.geometry.coordinates, p = f.properties;
+    return L.marker([lat, lon], {icon:L.divIcon({className:'', html:'<div class="site s-' + p.g + '"></div>', iconSize:[14,14]}), title:p.n})
+      .bindPopup(() => popup(p, lat, lon), {maxWidth:280});
+  });
+  cluster.addLayers(ms);
+  document.getElementById('sitecount').textContent = '· ' + ms.length.toLocaleString() + ' shown';
+  const row = document.getElementById('siteRow'); row.textContent = '';
+  Object.keys(GROUPS).forEach(g => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
+    b.innerHTML = '<i class="s-' + g + '"></i>' + GROUPS[g];
+    b.setAttribute('aria-pressed', on.has(g));
+    b.onclick = () => { on.has(g) ? on.delete(g) : on.add(g); store.set('sites', [...on].join(',')); drawSites(); };
+    row.appendChild(b);
+  });
+}
+fetch('lost-sites.geojson').then(r => r.json()).then(d => { allSites = d.features; drawSites(); })
+  .catch(() => { document.getElementById('sitecount').textContent = '· could not load'; });
+})();
+</script>
+</body>
+</html>
