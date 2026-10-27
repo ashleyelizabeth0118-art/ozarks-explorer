@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
 <style>
 /* Layout: full-screen map, floating search on top, layer sheet docked at bottom (thumb reach). */
 :root{
@@ -74,6 +73,9 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 .pop p{margin:0 0 8px;color:#555;font-size:13px}
 .pop .acts{display:flex;flex-wrap:wrap;gap:6px}
 .pop .acts a,.pop .acts button{font:600 13px var(--display);letter-spacing:.05em;text-transform:uppercase;border:1px solid #ccc;border-radius:6px;padding:6px 9px;background:#f4f4f2;color:#1d2421;text-decoration:none;cursor:pointer}
+.hs{width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#b8560f;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.5)}
+.hs.approx{background:#fff;border:3px dashed #b8560f}
+.pop p a{color:#8a3f08}
 .me{width:16px;height:16px;border-radius:50%;background:#2a7de1;border:3px solid #fff;box-shadow:0 0 0 2px rgba(42,125,225,.35)}
 </style>
 </head>
@@ -97,7 +99,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
   <div class="row full" id="baseRow"></div>
   <div class="lbl full"><span>On top</span></div>
   <div class="row full" id="topRow"></div>
-  <div class="lbl full"><span>Lost sites (USGS records) <span id="sitecount"></span></span></div>
+  <div class="lbl full"><span>Hidden sites <span id="sitecount"></span></span><span>● exact &nbsp;◌ area</span></div>
   <div class="row full" id="siteRow"></div>
   <div class="blend full">
     <label class="lbl" for="op" style="margin:0">Blend</label>
@@ -113,7 +115,6 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 (function(){
 const R = 6378137, HALF = Math.PI * R;
@@ -254,43 +255,39 @@ setMin(store.get('min', '') === '1');
 
 render();
 
-// Lost sites: USGS GNIS features marked "(historical)" inside the Ozark Highlands
-const GROUPS = {school:'Old schools', church:'Old churches', town:'Lost towns', po:'Old post offices', other:'Mills, mines & other'};
-let on = new Set((store.get('sites', 'school,church,town,po,other') || '').split(',').filter(Boolean));
-let allSites = [];
-const cluster = L.markerClusterGroup({showCoverageOnHover:false, maxClusterRadius:45, disableClusteringAtZoom:14,
-  iconCreateFunction: c => L.divIcon({className:'', html:'<div class="cl" style="width:34px;height:34px">' + c.getChildCount() + '</div>', iconSize:[34,34]})});
-map.addLayer(cluster);
+// Hidden sites: hand-researched list in hidden-sites.json
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
-function popup(p, lat, lon){
-  const q = encodeURIComponent('"' + p.n + '" ' + p.co + ' County Missouri');
-  return '<div class="pop"><h3>' + esc(p.n) + '</h3><p>' + esc(p.c) + ' · ' + esc(p.co) + ' County · ' + esc(p.q) + ' quad<br>' + lat.toFixed(5) + ', ' + lon.toFixed(5) + '</p>' +
-    '<div class="acts"><button type="button" onclick="window.ozxZoom(' + lat + ',' + lon + ')">Zoom in</button>' +
+const siteLayer = L.layerGroup().addTo(map), byId = {};
+function popup(s){
+  const q = encodeURIComponent(s.search || s.name);
+  const loc = s.exact ? 'Exact spot (USGS coordinates)' : 'Approximate area, about ' + (s.radius/1609).toFixed(1) + ' mi' + ' radius';
+  return '<div class="pop"><h3>' + esc(s.name) + '</h3>' +
+    '<p><b>' + loc + '</b><br>' + esc(s.where) + '</p>' +
+    '<p>' + esc(s.story) + '</p>' +
+    '<p><b>Access:</b> ' + esc(s.access) + '</p>' +
+    '<p>' + s.sources.map(x => '<a target="_blank" rel="noopener" href="' + esc(x.u) + '">' + esc(x.t) + '</a>').join('<br>') + '</p>' +
+    '<div class="acts"><button type="button" onclick="window.ozxZoom(' + s.lat + ',' + s.lon + ',' + (s.exact ? 17 : 15) + ')">Zoom in</button>' +
     '<a target="_blank" rel="noopener" href="https://www.reddit.com/search/?q=' + q + '">Reddit</a>' +
     '<a target="_blank" rel="noopener" href="https://www.facebook.com/search/top/?q=' + q + '">Facebook</a>' +
-    '<a target="_blank" rel="noopener" href="https://www.google.com/search?q=' + q + '">Web</a>' +
-    '<a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon + '">Directions</a></div></div>';
+    '<a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '">Directions</a></div></div>';
 }
-window.ozxZoom = (lat, lon) => { map.closePopup(); map.setView([lat, lon], 17); };
-function drawSites(){
-  cluster.clearLayers();
-  const ms = allSites.filter(f => on.has(f.properties.g)).map(f => {
-    const [lon, lat] = f.geometry.coordinates, p = f.properties;
-    return L.marker([lat, lon], {icon:L.divIcon({className:'', html:'<div class="site s-' + p.g + '"></div>', iconSize:[14,14]}), title:p.n})
-      .bindPopup(() => popup(p, lat, lon), {maxWidth:280});
-  });
-  cluster.addLayers(ms);
-  document.getElementById('sitecount').textContent = '· ' + ms.length.toLocaleString() + ' shown';
+window.ozxZoom = (lat, lon, z) => { map.closePopup(); map.setView([lat, lon], z || 17); };
+function drawSites(list){
   const row = document.getElementById('siteRow'); row.textContent = '';
-  Object.keys(GROUPS).forEach(g => {
+  list.forEach(s => {
+    const m = L.marker([s.lat, s.lon], {title:s.name, icon:L.divIcon({className:'', html:'<div class="hs' + (s.exact ? '' : ' approx') + '"></div>', iconSize:[18,18]})})
+      .bindPopup(() => popup(s), {maxWidth:300, autoPanPaddingBottomRight:[10,40]});
+    siteLayer.addLayer(m);
+    if (!s.exact) siteLayer.addLayer(L.circle([s.lat, s.lon], {radius:s.radius, color:'#b8560f', weight:2, dashArray:'6 6', fillOpacity:.06, interactive:false}));
+    byId[s.id] = m;
     const b = document.createElement('button'); b.type = 'button'; b.className = 'chip';
-    b.innerHTML = '<i class="s-' + g + '"></i>' + GROUPS[g];
-    b.setAttribute('aria-pressed', on.has(g));
-    b.onclick = () => { on.has(g) ? on.delete(g) : on.add(g); store.set('sites', [...on].join(',')); drawSites(); };
+    b.textContent = s.name.split(':')[0];
+    b.onclick = () => { map.setView([s.lat, s.lon], s.exact ? 15 : 13); setTimeout(() => m.openPopup(), 350); };
     row.appendChild(b);
   });
+  document.getElementById('sitecount').textContent = '· ' + list.length;
 }
-fetch('lost-sites.geojson').then(r => r.json()).then(d => { allSites = d.features; drawSites(); })
+fetch('hidden-sites.json').then(r => r.json()).then(drawSites)
   .catch(() => { document.getElementById('sitecount').textContent = '· could not load'; });
 })();
 </script>
