@@ -113,7 +113,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
     <span class="full" style="flex-basis:100%;height:0"></span>
     <span class="full">All sites:</span>
     <a class="full" href="hidden-sites.gpx" download>GPX (OsmAnd)</a>
-    <a class="full" href="hidden-sites.kml" download>KML (Organic Maps)</a>
+    <a class="full" href="hidden-sites.kml" download>KML (Organic/CoMaps)</a>
   </div>
   <p class="note full" id="note"></p>
 </div>
@@ -275,7 +275,8 @@ function popup(s){
     '<a target="_blank" rel="noopener" href="https://www.facebook.com/search/top/?q=' + q + '">Facebook</a>' +
     '<a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lon + '">Directions</a>' +
     '<a href="https://osmand.net/map?pin=' + s.lat + ',' + s.lon + '#15/' + s.lat + '/' + s.lon + '">OsmAnd</a>' +
-    '<a href="om://map?v=1&ll=' + s.lat + ',' + s.lon + '&n=' + encodeURIComponent(s.name) + '">Organic Maps</a></div></div>';
+    '<a href="om://map?v=1&ll=' + s.lat + ',' + s.lon + '&n=' + encodeURIComponent(s.name) + '">Organic Maps</a>' +
+    '<a href="geo:' + s.lat + ',' + s.lon + '?q=' + s.lat + ',' + s.lon + '(' + encodeURIComponent(s.name) + ')">Other app</a></div></div>';
 }
 window.ozxZoom = (lat, lon, z) => { map.closePopup(); map.setView([lat, lon], z || 17); };
 function drawSites(list){

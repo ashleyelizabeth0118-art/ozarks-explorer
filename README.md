@@ -19,8 +19,8 @@ To add a site, copy an entry in `hidden-sites.json` and edit it, then run `pytho
 
 ## Use in OsmAnd or Organic Maps
 - `hidden-sites.gpx`: import into OsmAnd (or any GPS app). Approximate areas come in as circle tracks.
-- `hidden-sites.kml`: import into Organic Maps as a bookmark list.
-- Each pin's pop-up also has OsmAnd and Organic Maps buttons that open that spot in the app.
+- `hidden-sites.kml`: import into Organic Maps or CoMaps as a bookmark list.
+- Each pin's pop-up also has OsmAnd and Organic Maps buttons, plus an "Other app" button (Android) that offers any installed map app, including CoMaps.
 
 ## Links
 `#zoom/lat/lon` in the URL opens that spot. Add `/pin` to drop a marker, for example `#17/37.04811/-92.83101/pin`.

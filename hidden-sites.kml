@@ -180,4 +180,61 @@ Access: Unknown.
 Sources:
 Legends of America: Parson Keithly's Hidden Gold: https://www.legendsofamerica.com/parson-hidden-gold/</description><styleUrl>#area</styleUrl><Point><coordinates>-93.466600,36.805300</coordinates></Point></Placemark>
 <Placemark><name>Parson Keithly's hidden gold (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.466600,36.850216 -93.459278,36.849831 -93.452081,36.848685 -93.445133,36.846797 -93.438551,36.844198 -93.432450,36.840934 -93.426933,36.837060 -93.422095,36.832643 -93.418019,36.827758 -93.414773,36.822488 -93.412414,36.816925 -93.410983,36.811163 -93.410503,36.805300 -93.410983,36.799437 -93.412414,36.793675 -93.414773,36.788112 -93.418019,36.782842 -93.422095,36.777957 -93.426933,36.773540 -93.432450,36.769666 -93.438551,36.766402 -93.445133,36.763803 -93.452081,36.761915 -93.459278,36.760769 -93.466600,36.760384 -93.473922,36.760769 -93.481119,36.761915 -93.488067,36.763803 -93.494649,36.766402 -93.500750,36.769666 -93.506267,36.773540 -93.511105,36.777957 -93.515181,36.782842 -93.518427,36.788112 -93.520786,36.793675 -93.522217,36.799437 -93.522697,36.805300 -93.522217,36.811163 -93.520786,36.816925 -93.518427,36.822488 -93.515181,36.827758 -93.511105,36.832643 -93.506267,36.837060 -93.500750,36.840934 -93.494649,36.844198 -93.488067,36.846797 -93.481119,36.848685 -93.473922,36.849831 -93.466600,36.850216</coordinates></LineString></Placemark>
+<Placemark><name>Dewey's lost lead cave</name><description>Approximate area, 0.7 mi radius
+
+Side of Dewey Bald, just east of the Stone–Taney line (USGS summit coordinates; the cave's side of the mountain isn't given). The summit itself is now developed.
+
+Captain Sam Dewey, a hermit and government agent among the Delaware, supposedly mined nearly pure lead from a cave here. He hid the entrance under a flat rock covered with dirt. The 1923 writer hunted for it as a boy and never found it. A burned cabin site was said to be on top.
+
+Access: Mostly private land. Ownership not checked.
+
+Sources:
+WRV Quarterly: Waldo Powell, Dewey Bald Legend (1923, reprinted 1978): https://sgcld.thelibrary.org/lochist/periodicals/wrv/V6/N7/Sp78g.htm</description><styleUrl>#area</styleUrl><Point><coordinates>-93.296010,36.655060</coordinates></Point></Placemark>
+<Placemark><name>Dewey's lost lead cave (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.296010,36.665840 -93.294256,36.665748 -93.292532,36.665472 -93.290868,36.665019 -93.289292,36.664396 -93.287830,36.663612 -93.286509,36.662682 -93.285350,36.661622 -93.284373,36.660450 -93.283596,36.659185 -93.283031,36.657850 -93.282688,36.656467 -93.282573,36.655060 -93.282688,36.653653 -93.283031,36.652270 -93.283596,36.650935 -93.284373,36.649670 -93.285350,36.648498 -93.286509,36.647438 -93.287830,36.646508 -93.289292,36.645724 -93.290868,36.645101 -93.292532,36.644648 -93.294256,36.644372 -93.296010,36.644280 -93.297764,36.644372 -93.299488,36.644648 -93.301152,36.645101 -93.302728,36.645724 -93.304190,36.646508 -93.305511,36.647438 -93.306670,36.648498 -93.307647,36.649670 -93.308424,36.650935 -93.308989,36.652270 -93.309332,36.653653 -93.309447,36.655060 -93.309332,36.656467 -93.308989,36.657850 -93.308424,36.659185 -93.307647,36.660450 -93.306670,36.661622 -93.305511,36.662682 -93.304190,36.663612 -93.302728,36.664396 -93.301152,36.665019 -93.299488,36.665472 -93.297764,36.665748 -93.296010,36.665840</coordinates></LineString></Placemark>
+<Placemark><name>Table Rock Bluff blockhouse</name><description>Approximate area, 0.5 mi radius
+
+Table Rock bluff near the mouth of Fall Creek on the White River, Taney County (USGS 'Table Rock' summit). Settlers also smelted lead at Slick Rock Ford on Fall Creek.
+
+Settlers reportedly built blockhouses on a narrow point of this bluff, with a spring inside, as a fort in case of trouble with the Delaware. Barricade lines or building pads could show on LiDAR if the story is true.
+
+Access: Near Table Rock Dam; ownership not checked.
+
+Sources:
+WRV Quarterly: Dewey Bald Legend: https://sgcld.thelibrary.org/lochist/periodicals/wrv/V6/N7/Sp78g.htm</description><styleUrl>#area</styleUrl><Point><coordinates>-93.280260,36.591890</coordinates></Point></Placemark>
+<Placemark><name>Table Rock Bluff blockhouse (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.280260,36.599076 -93.279092,36.599015 -93.277943,36.598832 -93.276835,36.598529 -93.275785,36.598114 -93.274811,36.597591 -93.273931,36.596972 -93.273159,36.596265 -93.272509,36.595483 -93.271991,36.594640 -93.271614,36.593750 -93.271386,36.592828 -93.271309,36.591890 -93.271386,36.590952 -93.271614,36.590030 -93.271991,36.589140 -93.272509,36.588297 -93.273159,36.587515 -93.273931,36.586808 -93.274811,36.586189 -93.275785,36.585666 -93.276835,36.585251 -93.277943,36.584948 -93.279092,36.584765 -93.280260,36.584704 -93.281428,36.584765 -93.282577,36.584948 -93.283685,36.585251 -93.284735,36.585666 -93.285709,36.586189 -93.286589,36.586808 -93.287361,36.587515 -93.288011,36.588297 -93.288529,36.589140 -93.288906,36.590030 -93.289134,36.590952 -93.289211,36.591890 -93.289134,36.592828 -93.288906,36.593750 -93.288529,36.594640 -93.288011,36.595483 -93.287361,36.596265 -93.286589,36.596972 -93.285709,36.597591 -93.284735,36.598114 -93.283685,36.598529 -93.282577,36.598832 -93.281428,36.599015 -93.280260,36.599076</coordinates></LineString></Placemark>
+<Placemark><name>Kirbyville picnic spring shootout</name><description>Approximate area, 0.6 mi radius
+
+A spring at the Kirbyville picnic ground, Taney County. Circle is centered on Kirbyville; the spring isn't located.
+
+July 4, 1889: the Miles brothers shot Sheriff Galba Branson and detective Ed Funk in front of about 100 picnickers, then escaped into the brush. The fallout from the Bald Knobber era.
+
+Access: Unknown.
+
+Sources:
+WRV Quarterly: Willful Murder (1889 news reprint): https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/N12/s76e.html
+Bald Knobbers (Wikipedia): https://en.wikipedia.org/wiki/Bald_Knobbers</description><styleUrl>#area</styleUrl><Point><coordinates>-93.164070,36.623120</coordinates></Point></Placemark>
+<Placemark><name>Kirbyville picnic spring shootout (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.164070,36.632103 -93.162609,36.632026 -93.161173,36.631797 -93.159787,36.631419 -93.158474,36.630900 -93.157256,36.630247 -93.156155,36.629472 -93.155190,36.628589 -93.154377,36.627612 -93.153729,36.626558 -93.153259,36.625445 -93.152973,36.624293 -93.152877,36.623120 -93.152973,36.621947 -93.153259,36.620795 -93.153729,36.619682 -93.154377,36.618628 -93.155190,36.617651 -93.156155,36.616768 -93.157256,36.615993 -93.158474,36.615340 -93.159787,36.614821 -93.161173,36.614443 -93.162609,36.614214 -93.164070,36.614137 -93.165531,36.614214 -93.166967,36.614443 -93.168353,36.614821 -93.169666,36.615340 -93.170884,36.615993 -93.171985,36.616768 -93.172950,36.617651 -93.173763,36.618628 -93.174411,36.619682 -93.174881,36.620795 -93.175167,36.621947 -93.175263,36.623120 -93.175167,36.624293 -93.174881,36.625445 -93.174411,36.626558 -93.173763,36.627612 -93.172950,36.628589 -93.171985,36.629472 -93.170884,36.630247 -93.169666,36.630900 -93.168353,36.631419 -93.166967,36.631797 -93.165531,36.632026 -93.164070,36.632103</coordinates></LineString></Placemark>
+<Placemark><name>Younger's Cave, Monegaw Springs</name><description>Approximate area, 0.6 mi radius
+
+Bluff above the Osage River near Monegaw Springs, St. Clair County. Pinned on USGS 'Youngers Lookout'; the cave isn't separately mapped.
+
+Cole Younger is said to have hidden out in a bluff cave here while family and friends lived nearby. Farther from you than the rest, but still in the Ozarks.
+
+Access: Ownership not checked.
+
+Sources:
+Missouri State Archives: Caves in History and Legend: https://www.sos.mo.gov/archives/presentations/ap_transcripts/caves</description><styleUrl>#area</styleUrl><Point><coordinates>-93.843820,38.025590</coordinates></Point></Placemark>
+<Placemark><name>Younger's Cave, Monegaw Springs (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.843820,38.034573 -93.842332,38.034496 -93.840869,38.034267 -93.839456,38.033889 -93.838118,38.033370 -93.836878,38.032717 -93.835756,38.031942 -93.834773,38.031059 -93.833944,38.030082 -93.833284,38.029028 -93.832805,38.027915 -93.832514,38.026763 -93.832416,38.025590 -93.832514,38.024417 -93.832805,38.023265 -93.833284,38.022152 -93.833944,38.021098 -93.834773,38.020121 -93.835756,38.019238 -93.836878,38.018463 -93.838118,38.017810 -93.839456,38.017291 -93.840869,38.016913 -93.842332,38.016684 -93.843820,38.016607 -93.845308,38.016684 -93.846771,38.016913 -93.848184,38.017291 -93.849522,38.017810 -93.850762,38.018463 -93.851884,38.019238 -93.852867,38.020121 -93.853696,38.021098 -93.854356,38.022152 -93.854835,38.023265 -93.855126,38.024417 -93.855224,38.025590 -93.855126,38.026763 -93.854835,38.027915 -93.854356,38.029028 -93.853696,38.030082 -93.852867,38.031059 -93.851884,38.031942 -93.850762,38.032717 -93.849522,38.033370 -93.848184,38.033889 -93.846771,38.034267 -93.845308,38.034496 -93.843820,38.034573</coordinates></LineString></Placemark>
+<Placemark><name>Yocum silver &amp; the 'Spanish fort'</name><description>Approximate area, 5.0 mi radius
+
+Galena / lower James River area, Stone County. Very wide circle: no source gives a usable spot.
+
+Legend says Spaniards cached silver in caves here and the Yocum family later minted 'Yocum dollars' from it. One searcher claimed to find foundation stones of a small Spanish fort; another found a rock painting of a human figure on a creek bed. Historians doubt the whole story.
+
+Access: Lower areas are under Table Rock Lake.
+
+Sources:
+WRV Quarterly: Legendary Hidden Silver (1978): https://sgcld.thelibrary.org/lochist/periodicals/wrv/V6/N9/F78i.htm
+WRV Quarterly: Yocum Silver Dollar, Fact or Legend?: https://sgcld.thelibrary.org/lochist/periodicals/wrv/V7/N11/Sp82g.htm</description><styleUrl>#area</styleUrl><Point><coordinates>-93.466600,36.805300</coordinates></Point></Placemark>
+<Placemark><name>Yocum silver &amp; the 'Spanish fort' (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.466600,36.877165 -93.454885,36.876550 -93.443370,36.874716 -93.432252,36.871695 -93.421722,36.867537 -93.411960,36.862314 -93.403133,36.856116 -93.395392,36.849049 -93.388870,36.841232 -93.383677,36.832802 -93.379903,36.823900 -93.377613,36.814680 -93.376845,36.805300 -93.377613,36.795920 -93.379903,36.786700 -93.383677,36.777798 -93.388870,36.769368 -93.395392,36.761551 -93.403133,36.754484 -93.411960,36.748286 -93.421722,36.743063 -93.432252,36.738905 -93.443370,36.735884 -93.454885,36.734050 -93.466600,36.733435 -93.478315,36.734050 -93.489830,36.735884 -93.500948,36.738905 -93.511478,36.743063 -93.521240,36.748286 -93.530067,36.754484 -93.537808,36.761551 -93.544330,36.769368 -93.549523,36.777798 -93.553297,36.786700 -93.555587,36.795920 -93.556355,36.805300 -93.555587,36.814680 -93.553297,36.823900 -93.549523,36.832802 -93.544330,36.841232 -93.537808,36.849049 -93.530067,36.856116 -93.521240,36.862314 -93.511478,36.867537 -93.500948,36.871695 -93.489830,36.874716 -93.478315,36.876550 -93.466600,36.877165</coordinates></LineString></Placemark>
 </Document></kml>

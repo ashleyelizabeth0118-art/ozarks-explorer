@@ -314,5 +314,103 @@
     "u": "https://www.legendsofamerica.com/parson-hidden-gold/"
    }
   ]
+ },
+ {
+  "id": "dewey-cave",
+  "name": "Dewey's lost lead cave",
+  "lat": 36.65506,
+  "lon": -93.29601,
+  "exact": false,
+  "radius": 1200,
+  "where": "Side of Dewey Bald, just east of the Stone–Taney line (USGS summit coordinates; the cave's side of the mountain isn't given). The summit itself is now developed.",
+  "story": "Captain Sam Dewey, a hermit and government agent among the Delaware, supposedly mined nearly pure lead from a cave here. He hid the entrance under a flat rock covered with dirt. The 1923 writer hunted for it as a boy and never found it. A burned cabin site was said to be on top.",
+  "access": "Mostly private land. Ownership not checked.",
+  "search": "Dewey Bald cave lead Sam Dewey legend",
+  "sources": [
+   {
+    "t": "WRV Quarterly: Waldo Powell, Dewey Bald Legend (1923, reprinted 1978)",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V6/N7/Sp78g.htm"
+   }
+  ]
+ },
+ {
+  "id": "table-rock-fort",
+  "name": "Table Rock Bluff blockhouse",
+  "lat": 36.59189,
+  "lon": -93.28026,
+  "exact": false,
+  "radius": 800,
+  "where": "Table Rock bluff near the mouth of Fall Creek on the White River, Taney County (USGS 'Table Rock' summit). Settlers also smelted lead at Slick Rock Ford on Fall Creek.",
+  "story": "Settlers reportedly built blockhouses on a narrow point of this bluff, with a spring inside, as a fort in case of trouble with the Delaware. Barricade lines or building pads could show on LiDAR if the story is true.",
+  "access": "Near Table Rock Dam; ownership not checked.",
+  "search": "Table Rock bluff blockhouse Fall Creek Dewey settlers",
+  "sources": [
+   {
+    "t": "WRV Quarterly: Dewey Bald Legend",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V6/N7/Sp78g.htm"
+   }
+  ]
+ },
+ {
+  "id": "kirbyville-spring",
+  "name": "Kirbyville picnic spring shootout",
+  "lat": 36.62312,
+  "lon": -93.16407,
+  "exact": false,
+  "radius": 1000,
+  "where": "A spring at the Kirbyville picnic ground, Taney County. Circle is centered on Kirbyville; the spring isn't located.",
+  "story": "July 4, 1889: the Miles brothers shot Sheriff Galba Branson and detective Ed Funk in front of about 100 picnickers, then escaped into the brush. The fallout from the Bald Knobber era.",
+  "access": "Unknown.",
+  "search": "Kirbyville picnic 1889 Branson Funk Miles spring",
+  "sources": [
+   {
+    "t": "WRV Quarterly: Willful Murder (1889 news reprint)",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/N12/s76e.html"
+   },
+   {
+    "t": "Bald Knobbers (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Bald_Knobbers"
+   }
+  ]
+ },
+ {
+  "id": "youngers-cave",
+  "name": "Younger's Cave, Monegaw Springs",
+  "lat": 38.02559,
+  "lon": -93.84382,
+  "exact": false,
+  "radius": 1000,
+  "where": "Bluff above the Osage River near Monegaw Springs, St. Clair County. Pinned on USGS 'Youngers Lookout'; the cave isn't separately mapped.",
+  "story": "Cole Younger is said to have hidden out in a bluff cave here while family and friends lived nearby. Farther from you than the rest, but still in the Ozarks.",
+  "access": "Ownership not checked.",
+  "search": "Younger cave Monegaw Springs Cole Younger",
+  "sources": [
+   {
+    "t": "Missouri State Archives: Caves in History and Legend",
+    "u": "https://www.sos.mo.gov/archives/presentations/ap_transcripts/caves"
+   }
+  ]
+ },
+ {
+  "id": "yocum-fort",
+  "name": "Yocum silver & the 'Spanish fort'",
+  "lat": 36.8053,
+  "lon": -93.4666,
+  "exact": false,
+  "radius": 8000,
+  "where": "Galena / lower James River area, Stone County. Very wide circle: no source gives a usable spot.",
+  "story": "Legend says Spaniards cached silver in caves here and the Yocum family later minted 'Yocum dollars' from it. One searcher claimed to find foundation stones of a small Spanish fort; another found a rock painting of a human figure on a creek bed. Historians doubt the whole story.",
+  "access": "Lower areas are under Table Rock Lake.",
+  "search": "Yocum silver dollar Spanish fort rock painting Galena",
+  "sources": [
+   {
+    "t": "WRV Quarterly: Legendary Hidden Silver (1978)",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V6/N9/F78i.htm"
+   },
+   {
+    "t": "WRV Quarterly: Yocum Silver Dollar, Fact or Legend?",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V7/N11/Sp82g.htm"
+   }
+  ]
  }
 ]
