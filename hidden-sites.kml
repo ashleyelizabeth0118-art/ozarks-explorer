@@ -316,4 +316,25 @@ Access: Ownership not checked.
 Sources:
 Ozarks First: The long hunt for hidden gold and treasure in the Ozarks: https://www.ozarksfirst.com/news/ozarks-treasure-hunting-obsession/</description><styleUrl>#area</styleUrl><Point><coordinates>-93.868800,36.677000</coordinates></Point></Placemark>
 <Placemark><name>Ash Cave: Civil War gold (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.868800,36.730899 -93.860028,36.730438 -93.851406,36.729062 -93.843082,36.726796 -93.835198,36.723678 -93.827889,36.719761 -93.821280,36.715112 -93.815483,36.709811 -93.810600,36.703949 -93.806712,36.697626 -93.803886,36.690950 -93.802171,36.684035 -93.801596,36.677000 -93.802171,36.669965 -93.803886,36.663050 -93.806712,36.656374 -93.810600,36.650051 -93.815483,36.644189 -93.821280,36.638888 -93.827889,36.634239 -93.835198,36.630322 -93.843082,36.627204 -93.851406,36.624938 -93.860028,36.623562 -93.868800,36.623101 -93.877572,36.623562 -93.886194,36.624938 -93.894518,36.627204 -93.902402,36.630322 -93.909711,36.634239 -93.916320,36.638888 -93.922117,36.644189 -93.927000,36.650051 -93.930888,36.656374 -93.933714,36.663050 -93.935429,36.669965 -93.936004,36.677000 -93.935429,36.684035 -93.933714,36.690950 -93.930888,36.697626 -93.927000,36.703949 -93.922117,36.709811 -93.916320,36.715112 -93.909711,36.719761 -93.902402,36.723678 -93.894518,36.726796 -93.886194,36.729062 -93.877572,36.730438 -93.868800,36.730899</coordinates></LineString></Placemark>
+<Placemark><name>Bussman Lodge ruins</name><description>Exact spot
+
+Along the river near Devil's Elbow, Pulaski County. Coordinates come from a 2014 explorer report you supplied; I couldn't open that report to double-check them. Access road starts near 37.8203, -92.0558 and is about a 1-mile walk.
+
+Retreat built for Cooper-Bussman Fuse Co. employees, later used by Boy Scouts. Reported remains: two lodge chimneys, concrete bait reservoirs, a spring house, garage foundation, rock bridge and old dock.
+
+Access: Mark Twain National Forest per a 2003 geocache listing. Road is rough; 4WD or walk in. ATVs need a permit.
+
+Sources:
+Geocache GCG5RT: Bussman Lodge (archived): https://www.geocaching.com/geocache/GCG5RT</description><styleUrl>#exact</styleUrl><Point><coordinates>-92.074170,37.824400</coordinates></Point></Placemark>
+<Placemark><name>Mayfield settlement ruins</name><description>Approximate area, 0.7 mi radius
+
+Around Mayfield Cemetery south of Devil's Elbow, Pulaski County (USGS cemetery coordinates). Scattered ruins and the Mayfield cliffs are reported nearby.
+
+A former settlement that explorers report as scattered ruins plus a cemetery. Little or nothing may be left above ground in places. Building pads and old roads should show on LiDAR.
+
+Access: Not checked. This area may be on or near Fort Leonard Wood land; confirm before going.
+
+Sources:
+Mayfield Cemetery (USGS GNIS): https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names</description><styleUrl>#area</styleUrl><Point><coordinates>-92.066540,37.785310</coordinates></Point></Placemark>
+<Placemark><name>Mayfield settlement ruins (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-92.066540,37.796090 -92.064760,37.795998 -92.063010,37.795722 -92.061320,37.795269 -92.059720,37.794646 -92.058237,37.793862 -92.056895,37.792932 -92.055719,37.791872 -92.054728,37.790700 -92.053938,37.789435 -92.053365,37.788100 -92.053017,37.786717 -92.052900,37.785310 -92.053017,37.783903 -92.053365,37.782520 -92.053938,37.781185 -92.054728,37.779920 -92.055719,37.778748 -92.056895,37.777688 -92.058237,37.776758 -92.059720,37.775974 -92.061320,37.775351 -92.063010,37.774898 -92.064760,37.774622 -92.066540,37.774530 -92.068320,37.774622 -92.070070,37.774898 -92.071760,37.775351 -92.073360,37.775974 -92.074843,37.776758 -92.076185,37.777688 -92.077361,37.778748 -92.078352,37.779920 -92.079142,37.781185 -92.079715,37.782520 -92.080063,37.783903 -92.080180,37.785310 -92.080063,37.786717 -92.079715,37.788100 -92.079142,37.789435 -92.078352,37.790700 -92.077361,37.791872 -92.076185,37.792932 -92.074843,37.793862 -92.073360,37.794646 -92.071760,37.795269 -92.070070,37.795722 -92.068320,37.795998 -92.066540,37.796090</coordinates></LineString></Placemark>
 </Document></kml>

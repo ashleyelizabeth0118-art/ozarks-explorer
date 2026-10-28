@@ -546,5 +546,41 @@
     "u": "https://www.ozarksfirst.com/news/ozarks-treasure-hunting-obsession/"
    }
   ]
+ },
+ {
+  "id": "bussman-lodge",
+  "name": "Bussman Lodge ruins",
+  "lat": 37.8244,
+  "lon": -92.07417,
+  "exact": true,
+  "radius": 0,
+  "where": "Along the river near Devil's Elbow, Pulaski County. Coordinates come from a 2014 explorer report you supplied; I couldn't open that report to double-check them. Access road starts near 37.8203, -92.0558 and is about a 1-mile walk.",
+  "story": "Retreat built for Cooper-Bussman Fuse Co. employees, later used by Boy Scouts. Reported remains: two lodge chimneys, concrete bait reservoirs, a spring house, garage foundation, rock bridge and old dock.",
+  "access": "Mark Twain National Forest per a 2003 geocache listing. Road is rough; 4WD or walk in. ATVs need a permit.",
+  "search": "Bussman Lodge ruins Devil's Elbow",
+  "sources": [
+   {
+    "t": "Geocache GCG5RT: Bussman Lodge (archived)",
+    "u": "https://www.geocaching.com/geocache/GCG5RT"
+   }
+  ]
+ },
+ {
+  "id": "mayfield",
+  "name": "Mayfield settlement ruins",
+  "lat": 37.78531,
+  "lon": -92.06654,
+  "exact": false,
+  "radius": 1200,
+  "where": "Around Mayfield Cemetery south of Devil's Elbow, Pulaski County (USGS cemetery coordinates). Scattered ruins and the Mayfield cliffs are reported nearby.",
+  "story": "A former settlement that explorers report as scattered ruins plus a cemetery. Little or nothing may be left above ground in places. Building pads and old roads should show on LiDAR.",
+  "access": "Not checked. This area may be on or near Fort Leonard Wood land; confirm before going.",
+  "search": "Mayfield Devil's Elbow ruins cemetery Pulaski County",
+  "sources": [
+   {
+    "t": "Mayfield Cemetery (USGS GNIS)",
+    "u": "https://edits.nationalmap.gov/apps/gaz-domestic/public/search/names"
+   }
+  ]
  }
 ]
