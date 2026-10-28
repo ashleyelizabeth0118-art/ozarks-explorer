@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Ozarks Hidden Sites</name>
+<Style id="exact"><IconStyle><color>ff0f56b8</color></IconStyle></Style>
+<Style id="area"><IconStyle><color>ffffffff</color></IconStyle><LineStyle><color>ff0f56b8</color><width>3</width></LineStyle></Style>
+<Placemark><name>Bald Knobber graves: Dave &amp; Billy Walker</name><description>Approximate area, 2.5 mi radius
+
+Abundance Cemetery, near Sparta, Christian County. I could not find coordinates for the cemetery, so the circle is centered on Sparta.
+
+Father and son hanged with John Mathews in Ozark on May 10, 1889, after a botched gallows. The last act of the Christian County Bald Knobbers.
+
+Access: Cemetery access unknown. Ask the landowner if it's on private land.
+
+Sources:
+Missouri Gravestones: David Walker: https://missourigravestones.org/view.php?id=748468
+Geocache GCX6XY (notes graves near Sparta): https://geocaching.com/geocache/GCX6XY</description><styleUrl>#area</styleUrl><Point><coordinates>-93.081570,37.001160</coordinates></Point></Placemark>
+<Placemark><name>Bald Knobber graves: Dave &amp; Billy Walker (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.081570,37.037092 -93.075697,37.036785 -93.069925,37.035868 -93.064352,37.034357 -93.059074,37.032278 -93.054180,37.029667 -93.049755,37.026568 -93.045875,37.023034 -93.042605,37.019126 -93.040002,37.014911 -93.038110,37.010460 -93.036962,37.005850 -93.036577,37.001160 -93.036962,36.996470 -93.038110,36.991860 -93.040002,36.987409 -93.042605,36.983194 -93.045875,36.979286 -93.049755,36.975752 -93.054180,36.972653 -93.059074,36.970042 -93.064352,36.967963 -93.069925,36.966452 -93.075697,36.965535 -93.081570,36.965228 -93.087443,36.965535 -93.093215,36.966452 -93.098788,36.967963 -93.104066,36.970042 -93.108960,36.972653 -93.113385,36.975752 -93.117265,36.979286 -93.120535,36.983194 -93.123138,36.987409 -93.125030,36.991860 -93.126178,36.996470 -93.126563,37.001160 -93.126178,37.005850 -93.125030,37.010460 -93.123138,37.014911 -93.120535,37.019126 -93.117265,37.023034 -93.113385,37.026568 -93.108960,37.029667 -93.104066,37.032278 -93.098788,37.034357 -93.093215,37.035868 -93.087443,37.036785 -93.081570,37.037092</coordinates></LineString></Placemark>
+<Placemark><name>Mathews Cemetery (John Mathews lead)</name><description>Exact spot
+
+Mathews Cemetery near Chadwick, Christian County (USGS coordinates).
+
+UNCONFIRMED LEAD. John Mathews was the third Bald Knobber hanged in 1889, and the Christian County group was centered on Chadwick. I found no source saying where he is buried. This family cemetery is a lead, not a match.
+
+Access: Likely private land.
+
+Sources:
+Bald Knobbers (Wikipedia): https://en.wikipedia.org/wiki/Bald_Knobbers</description><styleUrl>#exact</styleUrl><Point><coordinates>-93.031830,36.925390</coordinates></Point></Placemark>
+<Placemark><name>Snapp Balds: Bald Knobbers' first meeting place</name><description>Approximate area, 0.5 mi radius
+
+Just north of Kirbyville, Taney County. USGS marks Snapp Balds as a ridge range; the exact meeting knob isn't pinned.
+
+Where Nat Kinney's Taney County vigilantes first met. The open bald knobs let them watch for spies, and gave the group its name.
+
+Access: Private land likely.
+
+Sources:
+Bald Knobbers (Wikipedia): https://en.wikipedia.org/wiki/Bald_Knobbers</description><styleUrl>#area</styleUrl><Point><coordinates>-93.174900,36.638400</coordinates></Point></Placemark>
+<Placemark><name>Snapp Balds: Bald Knobbers' first meeting place (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.174900,36.645586 -93.173731,36.645525 -93.172582,36.645342 -93.171473,36.645039 -93.170422,36.644624 -93.169448,36.644101 -93.168567,36.643482 -93.167795,36.642775 -93.167144,36.641993 -93.166626,36.641150 -93.166249,36.640260 -93.166021,36.639338 -93.165944,36.638400 -93.166021,36.637462 -93.166249,36.636540 -93.166626,36.635650 -93.167144,36.634807 -93.167795,36.634025 -93.168567,36.633318 -93.169448,36.632699 -93.170422,36.632176 -93.171473,36.631761 -93.172582,36.631458 -93.173731,36.631275 -93.174900,36.631214 -93.176069,36.631275 -93.177218,36.631458 -93.178327,36.631761 -93.179378,36.632176 -93.180352,36.632699 -93.181233,36.633318 -93.182005,36.634025 -93.182656,36.634807 -93.183174,36.635650 -93.183551,36.636540 -93.183779,36.637462 -93.183856,36.638400 -93.183779,36.639338 -93.183551,36.640260 -93.183174,36.641150 -93.182656,36.641993 -93.182005,36.642775 -93.181233,36.643482 -93.180352,36.644101 -93.179378,36.644624 -93.178327,36.645039 -93.177218,36.645342 -93.176069,36.645525 -93.174900,36.645586</coordinates></LineString></Placemark>
+<Placemark><name>Murder Rock: Alf Bolin's ambush spot</name><description>Exact spot
+
+Limestone outcrops on Pine Mountain beside the old Springfield–Harrison road, about 10 miles south of Forsyth, Taney County (USGS coordinates). A 1974 account says Highway JJ runs about 60 ft east of the old roadbed, and Coal Pit Hollow spring sits at the foot of the mountain.
+
+Civil War bushwhacker Alf Bolin reportedly hid in these rocks to rob and kill travelers on the road. Look for the old roadbed beside it in the LiDAR.
+
+Access: PRIVATE. Owner proposed public access in 2020; status unknown since. Don't go without permission.
+
+Sources:
+KY3: Murder Rock could open to the public (2020): https://www.ky3.com/content/news/Historic-site-Murder-Rock-could-open-to-the-public-landowner-presents-idea-to-county-leaders-567168281.html
+White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974): https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html</description><styleUrl>#exact</styleUrl><Point><coordinates>-93.159710,36.568320</coordinates></Point></Placemark>
+<Placemark><name>Layton's Mill: where Alf Bolin was killed</name><description>Approximate area, 1.6 mi radius
+
+About 3 miles south of Murder Rock, near the Arkansas line. The circle is placed from that distance alone.
+
+An 1862 Union report put Bolin's band in the hills toward 'Laten's Mills'. A disguised Union soldier killed Bolin with a plow colter at the nearby home of Mrs. Foster. His head was later put on a pole in Ozark. Mill and house are long gone.
+
+Access: Unknown. Mostly private land.
+
+Sources:
+Ozarks History: Alf Bolin, just facts: https://ozarks-history.blogspot.com/2012/05/alf-bolin-just-facts-part-i.html
+White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974): https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html</description><styleUrl>#area</styleUrl><Point><coordinates>-93.159700,36.524800</coordinates></Point></Placemark>
+<Placemark><name>Layton's Mill: where Alf Bolin was killed (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.159700,36.547258 -93.156052,36.547066 -93.152467,36.546493 -93.149005,36.545548 -93.145727,36.544249 -93.142687,36.542617 -93.139939,36.540680 -93.137529,36.538471 -93.135498,36.536029 -93.133881,36.533394 -93.132706,36.530613 -93.131993,36.527731 -93.131754,36.524800 -93.131993,36.521869 -93.132706,36.518987 -93.133881,36.516206 -93.135498,36.513571 -93.137529,36.511129 -93.139939,36.508920 -93.142687,36.506983 -93.145727,36.505351 -93.149005,36.504052 -93.152467,36.503107 -93.156052,36.502534 -93.159700,36.502342 -93.163348,36.502534 -93.166933,36.503107 -93.170395,36.504052 -93.173673,36.505351 -93.176713,36.506983 -93.179461,36.508920 -93.181871,36.511129 -93.183902,36.513571 -93.185519,36.516206 -93.186694,36.518987 -93.187407,36.521869 -93.187646,36.524800 -93.187407,36.527731 -93.186694,36.530613 -93.185519,36.533394 -93.183902,36.536029 -93.181871,36.538471 -93.179461,36.540680 -93.176713,36.542617 -93.173673,36.544249 -93.170395,36.545548 -93.166933,36.546493 -93.163348,36.547066 -93.159700,36.547258</coordinates></LineString></Placemark>
+<Placemark><name>Clark's Mill battle &amp; blockhouse</name><description>Approximate area, 0.6 mi radius
+
+On Bryant Creek about a mile north of Vera Cruz, Douglas County. Placed from that description.
+
+Union blockhouse captured and destroyed in the Nov. 7, 1862 battle. A 2012 report says traces of the old Vera Cruz Road are still visible on the farm. Good LiDAR target.
+
+Access: PRIVATE farm.
+
+Sources:
+Battle of Clark's Mill (Wikipedia): https://en.wikipedia.org/wiki/Battle_of_Clark%27s_Mill
+KSMU: landowner finds his farm was a battle site (2012): https://www.ksmu.org/local-history/2012-09-27/what-do-you-do-upon-discovering-your-land-was-a-civil-war-battle-site-host-a-reenactment-naturally</description><styleUrl>#area</styleUrl><Point><coordinates>-92.493500,36.928400</coordinates></Point></Placemark>
+<Placemark><name>Clark's Mill battle &amp; blockhouse (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-92.493500,36.936485 -92.492180,36.936416 -92.490882,36.936209 -92.489630,36.935869 -92.488443,36.935402 -92.487343,36.934814 -92.486348,36.934117 -92.485476,36.933322 -92.484741,36.932442 -92.484156,36.931494 -92.483731,36.930493 -92.483473,36.929455 -92.483386,36.928400 -92.483473,36.927345 -92.483731,36.926307 -92.484156,36.925306 -92.484741,36.924358 -92.485476,36.923478 -92.486348,36.922683 -92.487343,36.921986 -92.488443,36.921398 -92.489630,36.920931 -92.490882,36.920591 -92.492180,36.920384 -92.493500,36.920315 -92.494820,36.920384 -92.496118,36.920591 -92.497370,36.920931 -92.498557,36.921398 -92.499657,36.921986 -92.500652,36.922683 -92.501524,36.923478 -92.502259,36.924358 -92.502844,36.925306 -92.503269,36.926307 -92.503527,36.927345 -92.503614,36.928400 -92.503527,36.929455 -92.503269,36.930493 -92.502844,36.931494 -92.502259,36.932442 -92.501524,36.933322 -92.500652,36.934117 -92.499657,36.934814 -92.498557,36.935402 -92.497370,36.935869 -92.496118,36.936209 -92.494820,36.936416 -92.493500,36.936485</coordinates></LineString></Placemark>
+<Placemark><name>Vera Cruz: lost first county seat</name><description>Exact spot
+
+On Bryant Creek, central Douglas County (USGS coordinates).
+
+Douglas County's first seat until 1870, with a courthouse, mills, blacksmith and about 15 homes. Now only a cemetery and an old log church remain. Building pads and the old mill pond may show in LiDAR.
+
+Access: Surrounding land private.
+
+Sources:
+Vera Cruz, Missouri (Wikipedia): https://en.wikipedia.org/wiki/Vera_Cruz,_Missouri
+KSMU (2012): https://www.ksmu.org/local-history/2012-09-27/what-do-you-do-upon-discovering-your-land-was-a-civil-war-battle-site-host-a-reenactment-naturally</description><styleUrl>#exact</styleUrl><Point><coordinates>-92.493500,36.913940</coordinates></Point></Placemark>
+<Placemark><name>Breadtray Mountain: Spanish silver legend</name><description>Exact spot
+
+Summit near Table Rock Lake, Stone County (USGS coordinates). The legend gives no spot on the mountain.
+
+Centuries-old tale of Spanish explorers sealing a silver mine here. Unproven. Old prospect pits or diggings might show on the slope layer.
+
+Access: Ownership not checked. Confirm before going; no digging on public land.
+
+Sources:
+State of the Ozarks: Legend of Breadtray Mountain: https://stateoftheozarks.net/showcase/2018/12/04/the-legend-of-breadtray-mountain/
+KY3: Buried treasure in the Ozarks: https://www.ky3.com/2020/12/16/the-place-buried-treasure-in-the-ozarks/</description><styleUrl>#exact</styleUrl><Point><coordinates>-93.479220,36.580350</coordinates></Point></Placemark>
+<Placemark><name>Alf Bolin's lost grave</name><description>Approximate area, 0.7 mi radius
+
+Right side of the old Swan Creek Road, about 1 mile north and east of Old Forsyth (now Shadowrock Park), Taney County. Circle placed from that description.
+
+After his head was cut off, the outlaw's body was buried in an unmarked grave. The one witness, a boy of 12 at the time, could never pinpoint it later. Look for the old Swan Creek roadbed in the LiDAR.
+
+Access: Mixed private and public land. Unmarked grave: don't dig.
+
+Sources:
+White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974): https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html</description><styleUrl>#area</styleUrl><Point><coordinates>-93.087800,36.696100</coordinates></Point></Placemark>
+<Placemark><name>Alf Bolin's lost grave (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.087800,36.706880 -93.086045,36.706788 -93.084320,36.706512 -93.082655,36.706059 -93.081078,36.705436 -93.079616,36.704652 -93.078294,36.703722 -93.077134,36.702662 -93.076157,36.701490 -93.075379,36.700225 -93.074814,36.698890 -93.074471,36.697507 -93.074356,36.696100 -93.074471,36.694693 -93.074814,36.693310 -93.075379,36.691975 -93.076157,36.690710 -93.077134,36.689538 -93.078294,36.688478 -93.079616,36.687548 -93.081078,36.686764 -93.082655,36.686141 -93.084320,36.685688 -93.086045,36.685412 -93.087800,36.685320 -93.089555,36.685412 -93.091280,36.685688 -93.092945,36.686141 -93.094522,36.686764 -93.095984,36.687548 -93.097306,36.688478 -93.098466,36.689538 -93.099443,36.690710 -93.100221,36.691975 -93.100786,36.693310 -93.101129,36.694693 -93.101244,36.696100 -93.101129,36.697507 -93.100786,36.698890 -93.100221,36.700225 -93.099443,36.701490 -93.098466,36.702662 -93.097306,36.703722 -93.095984,36.704652 -93.094522,36.705436 -93.092945,36.706059 -93.091280,36.706512 -93.089555,36.706788 -93.087800,36.706880</coordinates></LineString></Placemark>
+<Placemark><name>Alf Bolin's treasure cave</name><description>Approximate area, 0.6 mi radius
+
+Fox Creek Hills, Section 20, T22N R20W, about 2 miles southwest of the old Mincy store and mill, Taney County. Circle is that section's center.
+
+Bolin's loot is said to be buried near a cave in these hills. A stranger spent several summers searching from a farm on Highway JJ and never said whether he found it.
+
+Access: Ownership not checked. Confirm before going.
+
+Sources:
+White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974): https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html</description><styleUrl>#area</styleUrl><Point><coordinates>-93.126300,36.541330</coordinates></Point></Placemark>
+<Placemark><name>Alf Bolin's treasure cave (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.126300,36.550313 -93.124841,36.550236 -93.123406,36.550007 -93.122021,36.549629 -93.120710,36.549110 -93.119493,36.548457 -93.118394,36.547682 -93.117430,36.546799 -93.116617,36.545822 -93.115970,36.544768 -93.115500,36.543655 -93.115215,36.542503 -93.115119,36.541330 -93.115215,36.540157 -93.115500,36.539005 -93.115970,36.537892 -93.116617,36.536838 -93.117430,36.535861 -93.118394,36.534978 -93.119493,36.534203 -93.120710,36.533550 -93.122021,36.533031 -93.123406,36.532653 -93.124841,36.532424 -93.126300,36.532347 -93.127759,36.532424 -93.129194,36.532653 -93.130579,36.533031 -93.131890,36.533550 -93.133107,36.534203 -93.134206,36.534978 -93.135170,36.535861 -93.135983,36.536838 -93.136630,36.537892 -93.137100,36.539005 -93.137385,36.540157 -93.137481,36.541330 -93.137385,36.542503 -93.137100,36.543655 -93.136630,36.544768 -93.135983,36.545822 -93.135170,36.546799 -93.134206,36.547682 -93.133107,36.548457 -93.131890,36.549110 -93.130579,36.549629 -93.129194,36.550007 -93.127759,36.550236 -93.126300,36.550313</coordinates></LineString></Placemark>
+<Placemark><name>Murder Rocks Union soldiers' graves</name><description>Approximate area, 0.9 mi radius
+
+About 3 miles south of Kirbyville, on what was the Charley Mahnkey place in 1974, Taney County. Circle placed from distance only.
+
+Two Union soldiers ambushed at Murder Rocks were buried here. No marker is described.
+
+Access: Private land.
+
+Sources:
+White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974): https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html</description><styleUrl>#area</styleUrl><Point><coordinates>-93.164100,36.579600</coordinates></Point></Placemark>
+<Placemark><name>Murder Rocks Union soldiers' graves (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.164100,36.593075 -93.161910,36.592959 -93.159757,36.592616 -93.157679,36.592049 -93.155710,36.591269 -93.153885,36.590290 -93.152235,36.589128 -93.150788,36.587803 -93.149568,36.586337 -93.148597,36.584757 -93.147892,36.583088 -93.147464,36.581359 -93.147320,36.579600 -93.147464,36.577841 -93.147892,36.576112 -93.148597,36.574443 -93.149568,36.572863 -93.150788,36.571397 -93.152235,36.570072 -93.153885,36.568910 -93.155710,36.567931 -93.157679,36.567151 -93.159757,36.566584 -93.161910,36.566241 -93.164100,36.566125 -93.166290,36.566241 -93.168443,36.566584 -93.170521,36.567151 -93.172490,36.567931 -93.174315,36.568910 -93.175965,36.570072 -93.177412,36.571397 -93.178632,36.572863 -93.179603,36.574443 -93.180308,36.576112 -93.180736,36.577841 -93.180880,36.579600 -93.180736,36.581359 -93.180308,36.583088 -93.179603,36.584757 -93.178632,36.586337 -93.177412,36.587803 -93.175965,36.589128 -93.174315,36.590290 -93.172490,36.591269 -93.170521,36.592049 -93.168443,36.592616 -93.166290,36.592959 -93.164100,36.593075</coordinates></LineString></Placemark>
+<Placemark><name>Smallett Cave: the Headless Cobbler</name><description>Approximate area, 1.6 mi radius
+
+Near Smallett, Douglas County. Spring Creek runs just north of the cave mouth, close to the Glade Top Trail. Circle is centered on Smallett.
+
+A Civil War cobbler, believed to be Wesley Evans, hid in the cave to work out of sight of bushwhackers. People report a headless figure on the back roads at dusk, tapping inside the cave, a red light, and phantom horses.
+
+Access: Ownership unknown; nearby road may be private.
+
+Sources:
+Ozarks Alive: Headless Cobbler of Smallett Cave: https://www.ozarksalive.com/stories/headlesscobblersmallettcave</description><styleUrl>#area</styleUrl><Point><coordinates>-92.714100,36.848700</coordinates></Point></Placemark>
+<Placemark><name>Smallett Cave: the Headless Cobbler (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-92.714100,36.871158 -92.710437,36.870966 -92.706836,36.870393 -92.703360,36.869448 -92.700068,36.868149 -92.697015,36.866517 -92.694255,36.864580 -92.691835,36.862371 -92.689795,36.859929 -92.688172,36.857294 -92.686992,36.854513 -92.686276,36.851631 -92.686036,36.848700 -92.686276,36.845769 -92.686992,36.842887 -92.688172,36.840106 -92.689795,36.837471 -92.691835,36.835029 -92.694255,36.832820 -92.697015,36.830883 -92.700068,36.829251 -92.703360,36.827952 -92.706836,36.827007 -92.710437,36.826434 -92.714100,36.826242 -92.717763,36.826434 -92.721364,36.827007 -92.724840,36.827952 -92.728132,36.829251 -92.731185,36.830883 -92.733945,36.832820 -92.736365,36.835029 -92.738405,36.837471 -92.740028,36.840106 -92.741208,36.842887 -92.741924,36.845769 -92.742164,36.848700 -92.741924,36.851631 -92.741208,36.854513 -92.740028,36.857294 -92.738405,36.859929 -92.736365,36.862371 -92.733945,36.864580 -92.731185,36.866517 -92.728132,36.868149 -92.724840,36.869448 -92.721364,36.870393 -92.717763,36.870966 -92.714100,36.871158</coordinates></LineString></Placemark>
+<Placemark><name>Blue Man of Spring Creek: 1865 sighting</name><description>Approximate area, 0.9 mi radius
+
+North slope of 'Upper Twin Mountain', site of the first sighting in 1865. Pinned on USGS Twin Mountain (Howell County, near the Douglas line). Likely the same mountain but NOT confirmed.
+
+Hairy wild man said to roam the Spring Creek, North Fork and Indian Creek hills from the 1860s. A 1911 posse reportedly found his den full of animal bones. Its location was never recorded.
+
+Access: Ownership not checked.
+
+Sources:
+Ozarks Alive: The Blue Man: https://www.ozarksalive.com/stories/blue-man-ozarks-legend-long-told-nearly-forgotten
+Howell County News: When the Blue Man roamed: https://www.howellcountynews.com/history/when-blue-man-roamed-howell-county</description><styleUrl>#area</styleUrl><Point><coordinates>-92.087100,36.941400</coordinates></Point></Placemark>
+<Placemark><name>Blue Man of Spring Creek: 1865 sighting (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-92.087100,36.954875 -92.084899,36.954759 -92.082737,36.954416 -92.080648,36.953849 -92.078670,36.953069 -92.076837,36.952090 -92.075179,36.950928 -92.073725,36.949603 -92.072500,36.948137 -92.071524,36.946557 -92.070815,36.944888 -92.070385,36.943159 -92.070241,36.941400 -92.070385,36.939641 -92.070815,36.937912 -92.071524,36.936243 -92.072500,36.934663 -92.073725,36.933197 -92.075179,36.931872 -92.076837,36.930710 -92.078670,36.929731 -92.080648,36.928951 -92.082737,36.928384 -92.084899,36.928041 -92.087100,36.927925 -92.089301,36.928041 -92.091463,36.928384 -92.093552,36.928951 -92.095530,36.929731 -92.097363,36.930710 -92.099021,36.931872 -92.100475,36.933197 -92.101700,36.934663 -92.102676,36.936243 -92.103385,36.937912 -92.103815,36.939641 -92.103959,36.941400 -92.103815,36.943159 -92.103385,36.944888 -92.102676,36.946557 -92.101700,36.948137 -92.100475,36.949603 -92.099021,36.950928 -92.097363,36.952090 -92.095530,36.953069 -92.093552,36.953849 -92.091463,36.954416 -92.089301,36.954759 -92.087100,36.954875</coordinates></LineString></Placemark>
+<Placemark><name>Garrison Cave: treasure &amp; skeleton</name><description>Approximate area, 0.7 mi radius
+
+About 1 mile east of Ozark, below the old Garrison homestead on a hilltop near a bluff, Christian County. Circle placed from that description.
+
+In 1853 a stranger with a divining rod said treasure was buried in the cave. Diggers quit twice over ghostly sounds. A later dig found ashes, slag, bones and a human skeleton, but no treasure.
+
+Access: Unknown. Ownership not checked.
+
+Sources:
+Ozarks' History: Gold in Ozark Hills (1893 article): https://ozarkshistory.blogspot.com/2011/04/gold-in-ozark-hills.html</description><styleUrl>#area</styleUrl><Point><coordinates>-93.187900,37.020900</coordinates></Point></Placemark>
+<Placemark><name>Garrison Cave: treasure &amp; skeleton (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.187900,37.031680 -93.186138,37.031588 -93.184406,37.031312 -93.182733,37.030859 -93.181149,37.030236 -93.179681,37.029452 -93.178353,37.028522 -93.177189,37.027462 -93.176207,37.026290 -93.175426,37.025025 -93.174859,37.023690 -93.174514,37.022307 -93.174399,37.020900 -93.174514,37.019493 -93.174859,37.018110 -93.175426,37.016775 -93.176207,37.015510 -93.177189,37.014338 -93.178353,37.013278 -93.179681,37.012348 -93.181149,37.011564 -93.182733,37.010941 -93.184406,37.010488 -93.186138,37.010212 -93.187900,37.010120 -93.189662,37.010212 -93.191394,37.010488 -93.193067,37.010941 -93.194651,37.011564 -93.196119,37.012348 -93.197447,37.013278 -93.198611,37.014338 -93.199593,37.015510 -93.200374,37.016775 -93.200941,37.018110 -93.201286,37.019493 -93.201401,37.020900 -93.201286,37.022307 -93.200941,37.023690 -93.200374,37.025025 -93.199593,37.026290 -93.198611,37.027462 -93.197447,37.028522 -93.196119,37.029452 -93.194651,37.030236 -93.193067,37.030859 -93.191394,37.031312 -93.189662,37.031588 -93.187900,37.031680</coordinates></LineString></Placemark>
+<Placemark><name>Devil's Den: the 'bottomless' sinkhole</name><description>Exact spot
+
+Water-filled sinkhole in an oak grove west of Fordland, Webster County (USGS coordinates).
+
+Said never to have been sounded, with a water level that rises and falls about 30 ft. In the late 1800s it had a ladder, railing and band platform for social gatherings. The owner who bought it in 1980 later stopped allowing visitors.
+
+Access: PRIVATE and closed to visitors.
+
+Sources:
+Ozarks Alive: Devil's Den: https://www.ozarksalive.com/stories/ozarkers-visits-to-the-devil-or-more-precisely-to-his-den</description><styleUrl>#exact</styleUrl><Point><coordinates>-93.003790,37.159490</coordinates></Point></Placemark>
+<Placemark><name>Parson Keithly's hidden gold</name><description>Approximate area, 3.1 mi radius
+
+Near Galena, Stone County. Keithley's Cave near the family land, where he built a rock-walled tomb room. Cave not located; wide circle around Galena.
+
+A preacher came back from the California gold rush with about $6,000 in gold and hid it. His family never found it. Suspects: the cave, or under an apple tree in a far garden.
+
+Access: Unknown.
+
+Sources:
+Legends of America: Parson Keithly's Hidden Gold: https://www.legendsofamerica.com/parson-hidden-gold/</description><styleUrl>#area</styleUrl><Point><coordinates>-93.466600,36.805300</coordinates></Point></Placemark>
+<Placemark><name>Parson Keithly's hidden gold (search area)</name><styleUrl>#area</styleUrl><LineString><coordinates>-93.466600,36.850216 -93.459278,36.849831 -93.452081,36.848685 -93.445133,36.846797 -93.438551,36.844198 -93.432450,36.840934 -93.426933,36.837060 -93.422095,36.832643 -93.418019,36.827758 -93.414773,36.822488 -93.412414,36.816925 -93.410983,36.811163 -93.410503,36.805300 -93.410983,36.799437 -93.412414,36.793675 -93.414773,36.788112 -93.418019,36.782842 -93.422095,36.777957 -93.426933,36.773540 -93.432450,36.769666 -93.438551,36.766402 -93.445133,36.763803 -93.452081,36.761915 -93.459278,36.760769 -93.466600,36.760384 -93.473922,36.760769 -93.481119,36.761915 -93.488067,36.763803 -93.494649,36.766402 -93.500750,36.769666 -93.506267,36.773540 -93.511105,36.777957 -93.515181,36.782842 -93.518427,36.788112 -93.520786,36.793675 -93.522217,36.799437 -93.522697,36.805300 -93.522217,36.811163 -93.520786,36.816925 -93.518427,36.822488 -93.515181,36.827758 -93.511105,36.832643 -93.506267,36.837060 -93.500750,36.840934 -93.494649,36.844198 -93.488067,36.846797 -93.481119,36.848685 -93.473922,36.849831 -93.466600,36.850216</coordinates></LineString></Placemark>
+</Document></kml>
