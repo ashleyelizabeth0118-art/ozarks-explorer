@@ -412,5 +412,139 @@
     "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V7/N11/Sp82g.htm"
    }
   ]
+ },
+ {
+  "id": "browns-cave",
+  "name": "Brown's Cave & the 'Devil's Gulch'",
+  "lat": 36.843,
+  "lon": -92.471,
+  "exact": false,
+  "radius": 1500,
+  "where": "Bryant Creek about 2 miles downstream from the mouth of Rippee Creek, about 6 miles from Vera Cruz, Douglas County. Placed from that description. Entrance is 20–30 ft above the creek on a steep, rugged hill.",
+  "story": "A big cave that a 1957 county history says was never fully explored. A second section about 1.5 miles in has a deep chasm called the 'Devil's Gulch.' Methodists held meetings inside in 1892, and old-timers told stories about it.",
+  "access": "Ownership not checked. Rippee State Wildlife Management Area (USGS name) is nearby; check the boundary.",
+  "search": "Brown's Cave Bryant Creek Douglas County",
+  "sources": [
+   {
+    "t": "Reminiscent History of Douglas County, 1857–1957 (Missouri Digital Heritage)",
+    "u": "https://mdh.contentdm.oclc.org/digital/collection/mocohist/id/7190"
+   },
+   {
+    "t": "Dr. Brown's Excerpts of the Douglas County Herald, 1887–99 (PDF)",
+    "u": "http://www.theozarkuncle.com/Documents-Digital/Excerpts-1887-99.pdf"
+   }
+  ]
+ },
+ {
+  "id": "fort-lawrence",
+  "name": "Fort Lawrence (Beaver Station)",
+  "lat": 36.8414,
+  "lon": -92.7735,
+  "exact": false,
+  "radius": 800,
+  "where": "Beaver Creek at Rome, Douglas County. Built to guard Lawrence Mill. Circle centered on Rome.",
+  "story": "Union militia blockhouse guarding the mill and the Forsyth road. Confederates under Emmett McDonald surprised and burned it on Jan. 7, 1863, the day before the Battle of Springfield. Family legend says a log cabin from the fort was moved to Ava.",
+  "access": "Ownership not checked.",
+  "search": "Fort Lawrence Beaver Station Rome Missouri 1863",
+  "sources": [
+   {
+    "t": "Douglas County Herald: History & Folklore, Rome",
+    "u": "https://www.douglascountyherald.com/2014/08/05/douglas-county-history-folklore-rome/"
+   },
+   {
+    "t": "Ozarks History: Skirmish at Ft. Lawrence",
+    "u": "https://ozarks-history.blogspot.com/2011/05/skirmish-at-ft-lawrence.html"
+   }
+  ]
+ },
+ {
+  "id": "thornfield-hole",
+  "name": "Thornfield 'volcano' cave (1899)",
+  "lat": 36.7377,
+  "lon": -92.6593,
+  "exact": false,
+  "radius": 1200,
+  "where": "Bill Trent's farm, about 2 miles north of Thornfield, Ozark County. Placed from that distance.",
+  "story": "In 1899 smoke poured out of a plowed field for three days. A hole had blown open, and men who went in found a large cave in what looked like a bed of onyx. Cause never explained in the paper.",
+  "access": "Private farmland.",
+  "search": "Thornfield Missouri cave smoke 1899 Trent onyx",
+  "sources": [
+   {
+    "t": "Dr. Brown's Excerpts of the Douglas County Herald, 1887–99 (PDF)",
+    "u": "http://www.theozarkuncle.com/Documents-Digital/Excerpts-1887-99.pdf"
+   }
+  ]
+ },
+ {
+  "id": "indian-money",
+  "name": "Indian money cave, Clay Township",
+  "lat": 37.0192,
+  "lon": -92.4695,
+  "exact": false,
+  "radius": 6000,
+  "where": "Somewhere in Clay Township, northeastern Douglas County. Very wide circle centered on the township.",
+  "story": "An 1892 Herald correspondent wrote that an old Indian came through saying his tribe had hidden a large amount of money in a cave here. The writer joked that if you don't find the money you might find lead.",
+  "access": "Mostly private land.",
+  "search": "Douglas County Missouri Indian money cave legend",
+  "sources": [
+   {
+    "t": "Dr. Brown's Excerpts of the Douglas County Herald, 1887–99 (PDF)",
+    "u": "http://www.theozarkuncle.com/Documents-Digital/Excerpts-1887-99.pdf"
+   }
+  ]
+ },
+ {
+  "id": "pennington-mine",
+  "name": "Pennington's lead mine",
+  "lat": 36.952,
+  "lon": -92.624,
+  "exact": false,
+  "radius": 800,
+  "where": "About 2 miles east of Ava, Douglas County. Placed from that distance.",
+  "story": "Capt. E. D. Pennington leased out his lead mine here in the 1890s. Old shafts and spoil piles are good LiDAR targets. Not a legend, but a forgotten site.",
+  "access": "Private land likely. Old shafts are dangerous.",
+  "search": "Pennington lead mine Ava Missouri",
+  "sources": [
+   {
+    "t": "Dr. Brown's Excerpts of the Douglas County Herald, 1887–99 (PDF)",
+    "u": "http://www.theozarkuncle.com/Documents-Digital/Excerpts-1887-99.pdf"
+   }
+  ]
+ },
+ {
+  "id": "jordan-creek-cave",
+  "name": "Jordan Creek sealed Spanish cave",
+  "lat": 37.1875,
+  "lon": -93.3266,
+  "exact": false,
+  "radius": 1000,
+  "where": "Jordan Creek near where it joins a larger creek, Springfield (pinned at USGS Jordan Creek mouth). Railroad construction reportedly sealed the entrance.",
+  "story": "1858 letters and maps described a cave sealed with a flat stone marked with a turkey track, holding Spanish bullion. People dug for decades into the 1930s.",
+  "access": "Urban/private land.",
+  "search": "Jordan Creek Springfield Spanish cave turkey track",
+  "sources": [
+   {
+    "t": "Ozarks First: The long hunt for hidden gold and treasure in the Ozarks",
+    "u": "https://www.ozarksfirst.com/news/ozarks-treasure-hunting-obsession/"
+   }
+  ]
+ },
+ {
+  "id": "ash-cave",
+  "name": "Ash Cave: Civil War gold",
+  "lat": 36.677,
+  "lon": -93.8688,
+  "exact": false,
+  "radius": 6000,
+  "where": "Near Cassville, Barry County. Cave not located; wide circle centered on Cassville.",
+  "story": "Gold said to be hidden from bushwhackers, or stolen from a stagecoach on the Old Wire Road. 1920s diggers went 25–30 ft into crevices and found only arrowheads.",
+  "access": "Ownership not checked.",
+  "search": "Ash Cave Cassville gold Old Wire Road",
+  "sources": [
+   {
+    "t": "Ozarks First: The long hunt for hidden gold and treasure in the Ozarks",
+    "u": "https://www.ozarksfirst.com/news/ozarks-treasure-hunting-obsession/"
+   }
+  ]
  }
 ]
