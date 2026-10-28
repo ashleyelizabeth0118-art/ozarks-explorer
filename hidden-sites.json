@@ -1,102 +1,318 @@
 [
-  {
-    "id": "walker-graves",
-    "name": "Bald Knobber graves: Dave & Billy Walker",
-    "lat": 37.00116, "lon": -93.08157, "exact": false, "radius": 4000,
-    "where": "Abundance Cemetery, near Sparta, Christian County. I could not find coordinates for the cemetery, so the circle is centered on Sparta.",
-    "story": "Father and son hanged with John Mathews in Ozark on May 10, 1889, after a botched gallows. The last act of the Christian County Bald Knobbers.",
-    "access": "Cemetery access unknown. Ask the landowner if it's on private land.",
-    "search": "\"Abundance Cemetery\" Sparta Christian County",
-    "sources": [
-      {"t": "Missouri Gravestones: David Walker", "u": "https://missourigravestones.org/view.php?id=748468"},
-      {"t": "Geocache GCX6XY (notes graves near Sparta)", "u": "https://geocaching.com/geocache/GCX6XY"}
-    ]
-  },
-  {
-    "id": "mathews",
-    "name": "Mathews Cemetery (John Mathews lead)",
-    "lat": 36.92539, "lon": -93.03183, "exact": true, "radius": 0,
-    "where": "Mathews Cemetery near Chadwick, Christian County (USGS coordinates).",
-    "story": "UNCONFIRMED LEAD. John Mathews was the third Bald Knobber hanged in 1889, and the Christian County group was centered on Chadwick. I found no source saying where he is buried. This family cemetery is a lead, not a match.",
-    "access": "Likely private land.",
-    "search": "John Mathews Bald Knobber buried",
-    "sources": [
-      {"t": "Bald Knobbers (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Bald_Knobbers"}
-    ]
-  },
-  {
-    "id": "snapp-balds",
-    "name": "Snapp Balds: Bald Knobbers' first meeting place",
-    "lat": 36.63840, "lon": -93.17490, "exact": false, "radius": 800,
-    "where": "Just north of Kirbyville, Taney County. USGS marks Snapp Balds as a ridge range; the exact meeting knob isn't pinned.",
-    "story": "Where Nat Kinney's Taney County vigilantes first met. The open bald knobs let them watch for spies, and gave the group its name.",
-    "access": "Private land likely.",
-    "search": "Snapp Bald Bald Knobbers Kirbyville",
-    "sources": [
-      {"t": "Bald Knobbers (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Bald_Knobbers"}
-    ]
-  },
-  {
-    "id": "murder-rock",
-    "name": "Murder Rock: Alf Bolin's ambush spot",
-    "lat": 36.56832, "lon": -93.15971, "exact": true, "radius": 0,
-    "where": "Rock outcrop on the old Springfield–Harrison road, about 8 miles from Hollister, Taney County (USGS coordinates).",
-    "story": "Civil War bushwhacker Alf Bolin reportedly hid in these rocks to rob and kill travelers on the road. Look for the old roadbed beside it in the LiDAR.",
-    "access": "PRIVATE. Owner proposed public access in 2020; status unknown since. Don't go without permission.",
-    "search": "Murder Rock Alf Bolin Taney County",
-    "sources": [
-      {"t": "KY3: Murder Rock could open to the public (2020)", "u": "https://www.ky3.com/content/news/Historic-site-Murder-Rock-could-open-to-the-public-landowner-presents-idea-to-county-leaders-567168281.html"}
-    ]
-  },
-  {
-    "id": "layton-mill",
-    "name": "Layton's Mill: Bolin gang hideout area",
-    "lat": 36.5248, "lon": -93.1597, "exact": false, "radius": 2500,
-    "where": "About 3 miles south of Murder Rock, near the Arkansas line. The circle is placed from that distance alone.",
-    "story": "An 1862 Union report put Bolin's band in the hills toward 'Laten's Mills'. The mill is long gone.",
-    "access": "Unknown. Mostly private land.",
-    "search": "Layton Mill Taney County Alf Bolin",
-    "sources": [
-      {"t": "Ozarks History: Alf Bolin, just facts", "u": "https://ozarks-history.blogspot.com/2012/05/alf-bolin-just-facts-part-i.html"}
-    ]
-  },
-  {
-    "id": "clarks-mill",
-    "name": "Clark's Mill battle & blockhouse",
-    "lat": 36.9284, "lon": -92.4935, "exact": false, "radius": 900,
-    "where": "On Bryant Creek about a mile north of Vera Cruz, Douglas County. Placed from that description.",
-    "story": "Union blockhouse captured and destroyed in the Nov. 7, 1862 battle. A 2012 report says traces of the old Vera Cruz Road are still visible on the farm. Good LiDAR target.",
-    "access": "PRIVATE farm.",
-    "search": "Clark's Mill battle Vera Cruz Douglas County",
-    "sources": [
-      {"t": "Battle of Clark's Mill (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Battle_of_Clark%27s_Mill"},
-      {"t": "KSMU: landowner finds his farm was a battle site (2012)", "u": "https://www.ksmu.org/local-history/2012-09-27/what-do-you-do-upon-discovering-your-land-was-a-civil-war-battle-site-host-a-reenactment-naturally"}
-    ]
-  },
-  {
-    "id": "vera-cruz",
-    "name": "Vera Cruz: lost first county seat",
-    "lat": 36.91394, "lon": -92.49350, "exact": true, "radius": 0,
-    "where": "On Bryant Creek, central Douglas County (USGS coordinates).",
-    "story": "Douglas County's first seat until 1870, with a courthouse, mills, blacksmith and about 15 homes. Now only a cemetery and an old log church remain. Building pads and the old mill pond may show in LiDAR.",
-    "access": "Surrounding land private.",
-    "search": "Vera Cruz Douglas County Missouri history",
-    "sources": [
-      {"t": "Vera Cruz, Missouri (Wikipedia)", "u": "https://en.wikipedia.org/wiki/Vera_Cruz,_Missouri"},
-      {"t": "KSMU (2012)", "u": "https://www.ksmu.org/local-history/2012-09-27/what-do-you-do-upon-discovering-your-land-was-a-civil-war-battle-site-host-a-reenactment-naturally"}
-    ]
-  },
-  {
-    "id": "breadtray",
-    "name": "Breadtray Mountain: Spanish silver legend",
-    "lat": 36.58035, "lon": -93.47922, "exact": true, "radius": 0,
-    "where": "Summit near Table Rock Lake, Stone County (USGS coordinates). The legend gives no spot on the mountain.",
-    "story": "Centuries-old tale of Spanish explorers sealing a silver mine here. Unproven. Old prospect pits or diggings might show on the slope layer.",
-    "access": "Ownership not checked. Confirm before going; no digging on public land.",
-    "search": "Breadtray Mountain Spanish silver legend",
-    "sources": [
-      {"t": "State of the Ozarks: Legend of Breadtray Mountain", "u": "https://stateoftheozarks.net/showcase/2018/12/04/the-legend-of-breadtray-mountain/"},
-      {"t": "KY3: Buried treasure in the Ozarks", "u": "https://www.ky3.com/2020/12/16/the-place-buried-treasure-in-the-ozarks/"}
-    ]
-  }
+ {
+  "id": "walker-graves",
+  "name": "Bald Knobber graves: Dave & Billy Walker",
+  "lat": 37.00116,
+  "lon": -93.08157,
+  "exact": false,
+  "radius": 4000,
+  "where": "Abundance Cemetery, near Sparta, Christian County. I could not find coordinates for the cemetery, so the circle is centered on Sparta.",
+  "story": "Father and son hanged with John Mathews in Ozark on May 10, 1889, after a botched gallows. The last act of the Christian County Bald Knobbers.",
+  "access": "Cemetery access unknown. Ask the landowner if it's on private land.",
+  "search": "\"Abundance Cemetery\" Sparta Christian County",
+  "sources": [
+   {
+    "t": "Missouri Gravestones: David Walker",
+    "u": "https://missourigravestones.org/view.php?id=748468"
+   },
+   {
+    "t": "Geocache GCX6XY (notes graves near Sparta)",
+    "u": "https://geocaching.com/geocache/GCX6XY"
+   }
+  ]
+ },
+ {
+  "id": "mathews",
+  "name": "Mathews Cemetery (John Mathews lead)",
+  "lat": 36.92539,
+  "lon": -93.03183,
+  "exact": true,
+  "radius": 0,
+  "where": "Mathews Cemetery near Chadwick, Christian County (USGS coordinates).",
+  "story": "UNCONFIRMED LEAD. John Mathews was the third Bald Knobber hanged in 1889, and the Christian County group was centered on Chadwick. I found no source saying where he is buried. This family cemetery is a lead, not a match.",
+  "access": "Likely private land.",
+  "search": "John Mathews Bald Knobber buried",
+  "sources": [
+   {
+    "t": "Bald Knobbers (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Bald_Knobbers"
+   }
+  ]
+ },
+ {
+  "id": "snapp-balds",
+  "name": "Snapp Balds: Bald Knobbers' first meeting place",
+  "lat": 36.6384,
+  "lon": -93.1749,
+  "exact": false,
+  "radius": 800,
+  "where": "Just north of Kirbyville, Taney County. USGS marks Snapp Balds as a ridge range; the exact meeting knob isn't pinned.",
+  "story": "Where Nat Kinney's Taney County vigilantes first met. The open bald knobs let them watch for spies, and gave the group its name.",
+  "access": "Private land likely.",
+  "search": "Snapp Bald Bald Knobbers Kirbyville",
+  "sources": [
+   {
+    "t": "Bald Knobbers (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Bald_Knobbers"
+   }
+  ]
+ },
+ {
+  "id": "murder-rock",
+  "name": "Murder Rock: Alf Bolin's ambush spot",
+  "lat": 36.56832,
+  "lon": -93.15971,
+  "exact": true,
+  "radius": 0,
+  "where": "Limestone outcrops on Pine Mountain beside the old Springfield–Harrison road, about 10 miles south of Forsyth, Taney County (USGS coordinates). A 1974 account says Highway JJ runs about 60 ft east of the old roadbed, and Coal Pit Hollow spring sits at the foot of the mountain.",
+  "story": "Civil War bushwhacker Alf Bolin reportedly hid in these rocks to rob and kill travelers on the road. Look for the old roadbed beside it in the LiDAR.",
+  "access": "PRIVATE. Owner proposed public access in 2020; status unknown since. Don't go without permission.",
+  "search": "Murder Rock Alf Bolin Taney County",
+  "sources": [
+   {
+    "t": "KY3: Murder Rock could open to the public (2020)",
+    "u": "https://www.ky3.com/content/news/Historic-site-Murder-Rock-could-open-to-the-public-landowner-presents-idea-to-county-leaders-567168281.html"
+   },
+   {
+    "t": "White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974)",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html"
+   }
+  ]
+ },
+ {
+  "id": "layton-mill",
+  "name": "Layton's Mill: where Alf Bolin was killed",
+  "lat": 36.5248,
+  "lon": -93.1597,
+  "exact": false,
+  "radius": 2500,
+  "where": "About 3 miles south of Murder Rock, near the Arkansas line. The circle is placed from that distance alone.",
+  "story": "An 1862 Union report put Bolin's band in the hills toward 'Laten's Mills'. A disguised Union soldier killed Bolin with a plow colter at the nearby home of Mrs. Foster. His head was later put on a pole in Ozark. Mill and house are long gone.",
+  "access": "Unknown. Mostly private land.",
+  "search": "Layton Mill Taney County Alf Bolin",
+  "sources": [
+   {
+    "t": "Ozarks History: Alf Bolin, just facts",
+    "u": "https://ozarks-history.blogspot.com/2012/05/alf-bolin-just-facts-part-i.html"
+   },
+   {
+    "t": "White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974)",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html"
+   }
+  ]
+ },
+ {
+  "id": "clarks-mill",
+  "name": "Clark's Mill battle & blockhouse",
+  "lat": 36.9284,
+  "lon": -92.4935,
+  "exact": false,
+  "radius": 900,
+  "where": "On Bryant Creek about a mile north of Vera Cruz, Douglas County. Placed from that description.",
+  "story": "Union blockhouse captured and destroyed in the Nov. 7, 1862 battle. A 2012 report says traces of the old Vera Cruz Road are still visible on the farm. Good LiDAR target.",
+  "access": "PRIVATE farm.",
+  "search": "Clark's Mill battle Vera Cruz Douglas County",
+  "sources": [
+   {
+    "t": "Battle of Clark's Mill (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Battle_of_Clark%27s_Mill"
+   },
+   {
+    "t": "KSMU: landowner finds his farm was a battle site (2012)",
+    "u": "https://www.ksmu.org/local-history/2012-09-27/what-do-you-do-upon-discovering-your-land-was-a-civil-war-battle-site-host-a-reenactment-naturally"
+   }
+  ]
+ },
+ {
+  "id": "vera-cruz",
+  "name": "Vera Cruz: lost first county seat",
+  "lat": 36.91394,
+  "lon": -92.4935,
+  "exact": true,
+  "radius": 0,
+  "where": "On Bryant Creek, central Douglas County (USGS coordinates).",
+  "story": "Douglas County's first seat until 1870, with a courthouse, mills, blacksmith and about 15 homes. Now only a cemetery and an old log church remain. Building pads and the old mill pond may show in LiDAR.",
+  "access": "Surrounding land private.",
+  "search": "Vera Cruz Douglas County Missouri history",
+  "sources": [
+   {
+    "t": "Vera Cruz, Missouri (Wikipedia)",
+    "u": "https://en.wikipedia.org/wiki/Vera_Cruz,_Missouri"
+   },
+   {
+    "t": "KSMU (2012)",
+    "u": "https://www.ksmu.org/local-history/2012-09-27/what-do-you-do-upon-discovering-your-land-was-a-civil-war-battle-site-host-a-reenactment-naturally"
+   }
+  ]
+ },
+ {
+  "id": "breadtray",
+  "name": "Breadtray Mountain: Spanish silver legend",
+  "lat": 36.58035,
+  "lon": -93.47922,
+  "exact": true,
+  "radius": 0,
+  "where": "Summit near Table Rock Lake, Stone County (USGS coordinates). The legend gives no spot on the mountain.",
+  "story": "Centuries-old tale of Spanish explorers sealing a silver mine here. Unproven. Old prospect pits or diggings might show on the slope layer.",
+  "access": "Ownership not checked. Confirm before going; no digging on public land.",
+  "search": "Breadtray Mountain Spanish silver legend",
+  "sources": [
+   {
+    "t": "State of the Ozarks: Legend of Breadtray Mountain",
+    "u": "https://stateoftheozarks.net/showcase/2018/12/04/the-legend-of-breadtray-mountain/"
+   },
+   {
+    "t": "KY3: Buried treasure in the Ozarks",
+    "u": "https://www.ky3.com/2020/12/16/the-place-buried-treasure-in-the-ozarks/"
+   }
+  ]
+ },
+ {
+  "id": "bolin-grave",
+  "name": "Alf Bolin's lost grave",
+  "lat": 36.6961,
+  "lon": -93.0878,
+  "exact": false,
+  "radius": 1200,
+  "where": "Right side of the old Swan Creek Road, about 1 mile north and east of Old Forsyth (now Shadowrock Park), Taney County. Circle placed from that description.",
+  "story": "After his head was cut off, the outlaw's body was buried in an unmarked grave. The one witness, a boy of 12 at the time, could never pinpoint it later. Look for the old Swan Creek roadbed in the LiDAR.",
+  "access": "Mixed private and public land. Unmarked grave: don't dig.",
+  "search": "Alf Bolin grave Forsyth Swan Creek road",
+  "sources": [
+   {
+    "t": "White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974)",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html"
+   }
+  ]
+ },
+ {
+  "id": "bolin-cave",
+  "name": "Alf Bolin's treasure cave",
+  "lat": 36.54133,
+  "lon": -93.1263,
+  "exact": false,
+  "radius": 1000,
+  "where": "Fox Creek Hills, Section 20, T22N R20W, about 2 miles southwest of the old Mincy store and mill, Taney County. Circle is that section's center.",
+  "story": "Bolin's loot is said to be buried near a cave in these hills. A stranger spent several summers searching from a farm on Highway JJ and never said whether he found it.",
+  "access": "Ownership not checked. Confirm before going.",
+  "search": "Alf Bolin treasure Fox Creek Mincy cave",
+  "sources": [
+   {
+    "t": "White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974)",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html"
+   }
+  ]
+ },
+ {
+  "id": "union-graves",
+  "name": "Murder Rocks Union soldiers' graves",
+  "lat": 36.5796,
+  "lon": -93.1641,
+  "exact": false,
+  "radius": 1500,
+  "where": "About 3 miles south of Kirbyville, on what was the Charley Mahnkey place in 1974, Taney County. Circle placed from distance only.",
+  "story": "Two Union soldiers ambushed at Murder Rocks were buried here. No marker is described.",
+  "access": "Private land.",
+  "search": "Union soldiers buried Mahnkey Kirbyville Murder Rocks",
+  "sources": [
+   {
+    "t": "White River Valley Hist. Quarterly: Alf Bolin's Buried Treasure (1974)",
+    "u": "https://sgcld.thelibrary.org/lochist/periodicals/wrv/V5/n6/w74a.html"
+   }
+  ]
+ },
+ {
+  "id": "smallett-cave",
+  "name": "Smallett Cave: the Headless Cobbler",
+  "lat": 36.8487,
+  "lon": -92.7141,
+  "exact": false,
+  "radius": 2500,
+  "where": "Near Smallett, Douglas County. Spring Creek runs just north of the cave mouth, close to the Glade Top Trail. Circle is centered on Smallett.",
+  "story": "A Civil War cobbler, believed to be Wesley Evans, hid in the cave to work out of sight of bushwhackers. People report a headless figure on the back roads at dusk, tapping inside the cave, a red light, and phantom horses.",
+  "access": "Ownership unknown; nearby road may be private.",
+  "search": "Smallett Cave headless cobbler Douglas County",
+  "sources": [
+   {
+    "t": "Ozarks Alive: Headless Cobbler of Smallett Cave",
+    "u": "https://www.ozarksalive.com/stories/headlesscobblersmallettcave"
+   }
+  ]
+ },
+ {
+  "id": "blue-man",
+  "name": "Blue Man of Spring Creek: 1865 sighting",
+  "lat": 36.9414,
+  "lon": -92.0871,
+  "exact": false,
+  "radius": 1500,
+  "where": "North slope of 'Upper Twin Mountain', site of the first sighting in 1865. Pinned on USGS Twin Mountain (Howell County, near the Douglas line). Likely the same mountain but NOT confirmed.",
+  "story": "Hairy wild man said to roam the Spring Creek, North Fork and Indian Creek hills from the 1860s. A 1911 posse reportedly found his den full of animal bones. Its location was never recorded.",
+  "access": "Ownership not checked.",
+  "search": "Blue Man Spring Creek Ozarks legend den",
+  "sources": [
+   {
+    "t": "Ozarks Alive: The Blue Man",
+    "u": "https://www.ozarksalive.com/stories/blue-man-ozarks-legend-long-told-nearly-forgotten"
+   },
+   {
+    "t": "Howell County News: When the Blue Man roamed",
+    "u": "https://www.howellcountynews.com/history/when-blue-man-roamed-howell-county"
+   }
+  ]
+ },
+ {
+  "id": "garrison-cave",
+  "name": "Garrison Cave: treasure & skeleton",
+  "lat": 37.0209,
+  "lon": -93.1879,
+  "exact": false,
+  "radius": 1200,
+  "where": "About 1 mile east of Ozark, below the old Garrison homestead on a hilltop near a bluff, Christian County. Circle placed from that description.",
+  "story": "In 1853 a stranger with a divining rod said treasure was buried in the cave. Diggers quit twice over ghostly sounds. A later dig found ashes, slag, bones and a human skeleton, but no treasure.",
+  "access": "Unknown. Ownership not checked.",
+  "search": "Garrison Cave Ozark Missouri treasure",
+  "sources": [
+   {
+    "t": "Ozarks' History: Gold in Ozark Hills (1893 article)",
+    "u": "https://ozarkshistory.blogspot.com/2011/04/gold-in-ozark-hills.html"
+   }
+  ]
+ },
+ {
+  "id": "devils-den",
+  "name": "Devil's Den: the 'bottomless' sinkhole",
+  "lat": 37.15949,
+  "lon": -93.00379,
+  "exact": true,
+  "radius": 0,
+  "where": "Water-filled sinkhole in an oak grove west of Fordland, Webster County (USGS coordinates).",
+  "story": "Said never to have been sounded, with a water level that rises and falls about 30 ft. In the late 1800s it had a ladder, railing and band platform for social gatherings. The owner who bought it in 1980 later stopped allowing visitors.",
+  "access": "PRIVATE and closed to visitors.",
+  "search": "Devil's Den Webster County Fordland sinkhole",
+  "sources": [
+   {
+    "t": "Ozarks Alive: Devil's Den",
+    "u": "https://www.ozarksalive.com/stories/ozarkers-visits-to-the-devil-or-more-precisely-to-his-den"
+   }
+  ]
+ },
+ {
+  "id": "keithly-gold",
+  "name": "Parson Keithly's hidden gold",
+  "lat": 36.8053,
+  "lon": -93.4666,
+  "exact": false,
+  "radius": 5000,
+  "where": "Near Galena, Stone County. Keithley's Cave near the family land, where he built a rock-walled tomb room. Cave not located; wide circle around Galena.",
+  "story": "A preacher came back from the California gold rush with about $6,000 in gold and hid it. His family never found it. Suspects: the cave, or under an apple tree in a far garden.",
+  "access": "Unknown.",
+  "search": "Parson Keithly gold Keithley Cave Galena",
+  "sources": [
+   {
+    "t": "Legends of America: Parson Keithly's Hidden Gold",
+    "u": "https://www.legendsofamerica.com/parson-hidden-gold/"
+   }
+  ]
+ }
 ]
