@@ -45,6 +45,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
   box-shadow:0 -4px 18px rgba(0,0,0,.18);border-radius:14px 14px 0 0;
   padding:10px max(14px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 10px) max(14px,env(safe-area-inset-left,0px));
   display:grid;gap:10px}
+.sheet>*{min-width:0}
 .row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .row::-webkit-scrollbar{display:none}
 .lbl{font:600 12px var(--display);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
@@ -76,6 +77,15 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 .hs{width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#b8560f;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.5)}
 .hs.approx{background:#fff;border:3px dashed #b8560f}
 .pop p a{color:#8a3f08}
+.modes{display:flex;gap:6px;align-items:center}
+.mode{flex:1 1 0;min-width:0;border:1px solid var(--line);background:var(--chip);color:var(--fg);border-radius:9px;padding:9px 4px;font:600 15px var(--display);letter-spacing:.03em;cursor:pointer;white-space:nowrap}
+.mode[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.modes .collapse{flex:0 0 auto;padding-left:4px}
+.sheet.min .modes .mode{padding:7px 4px}
+.cmp-line{position:fixed;z-index:500;top:0;bottom:0;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 4px rgba(0,0,0,.6);left:50%;pointer-events:none}
+.cmp-handle{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;border:3px solid #fff;background:var(--accent);color:#fff;font:600 13px var(--display);box-shadow:0 2px 8px rgba(0,0,0,.5);pointer-events:auto;touch-action:none;cursor:ew-resize}
+.cmp-tag{position:absolute;top:calc(env(safe-area-inset-top,0px) + 66px);font:600 12px var(--display);letter-spacing:.08em;text-transform:uppercase;background:rgba(20,25,23,.8);color:#fff;padding:4px 8px;border-radius:6px;white-space:nowrap}
+.cmp-l{right:10px}.cmp-r{left:10px}
 .me{width:16px;height:16px;border-radius:50%;background:#2a7de1;border:3px solid #fff;box-shadow:0 0 0 2px rgba(42,125,225,.35)}
 </style>
 </head>
@@ -94,18 +104,39 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 </div>
 <div id="results" hidden></div>
 
+<div class="cmp-line" id="cmpLine" hidden>
+  <span class="cmp-tag cmp-l" id="cmpL">Old map</span><span class="cmp-tag cmp-r" id="cmpR">Today</span>
+  <button class="cmp-handle" id="cmpHandle" type="button" aria-label="Drag to compare old and new">◀▶</button>
+</div>
+
 <div class="sheet" id="sheet">
-  <div class="lbl"><span>Ground layer</span><button class="collapse" id="toggle" aria-expanded="true">Hide</button></div>
-  <div class="row full" id="baseRow"></div>
-  <div class="lbl full"><span>On top</span></div>
-  <div class="row full" id="topRow"></div>
+  <div class="modes" role="tablist" aria-label="Map mode">
+    <button class="mode" data-mode="drive" role="tab">Drive</button>
+    <button class="mode" data-mode="scout" role="tab">Scout</button>
+    <button class="mode" data-mode="then" role="tab">Then vs Now</button>
+    <button class="mode" data-mode="custom" role="tab">Custom</button>
+    <button class="collapse" id="toggle" aria-expanded="true">Hide</button>
+  </div>
+  <p class="note full" id="modeNote"></p>
+  <div class="full" id="thenBox" hidden>
+    <div class="lbl"><span>Left: old map</span></div>
+    <div class="row" id="thenLeft"></div>
+    <div class="lbl" style="margin-top:8px"><span>Right: today</span></div>
+    <div class="row" id="thenRight"></div>
+  </div>
+  <div class="full" id="customBox" hidden>
+    <div class="lbl"><span>Ground layer</span></div>
+    <div class="row" id="baseRow"></div>
+    <div class="lbl" style="margin-top:8px"><span>On top</span></div>
+    <div class="row" id="topRow"></div>
+    <div class="blend" style="margin-top:8px">
+      <label class="lbl" for="op" style="margin:0">Blend</label>
+      <input id="op" type="range" min="0" max="100" value="55">
+      <output id="opv" for="op">55%</output>
+    </div>
+  </div>
   <div class="lbl full"><span>Hidden sites <span id="sitecount"></span></span><span>● exact &nbsp;◌ area</span></div>
   <div class="row full" id="siteRow"></div>
-  <div class="blend full">
-    <label class="lbl" for="op" style="margin:0">Blend</label>
-    <input id="op" type="range" min="0" max="100" value="55">
-    <output id="opv" for="op">55%</output>
-  </div>
   <div class="readout">
     <span id="coord">—</span>
     <button id="copy" type="button">Copy</button>
@@ -147,8 +178,11 @@ const LAYERS = {
   old:   {name:'Oldest topo', note:'Earliest USGS edition on file for each spot (often 1880s–1950s). Black squares = buildings.', make:()=>new ImageTiles(HIST, mosaic(true), {maxZoom:18, maxNativeZoom:17, attribution:histAttr})},
   late:  {name:'Newest old topo', note:'Latest historical edition (often 1960s–1990s). Compare with Oldest to see what disappeared.', make:()=>new ImageTiles(HIST, mosaic(false), {maxZoom:18, maxNativeZoom:17, attribution:histAttr})},
   photo: {name:'Aerial today', note:'Current USGS aerial photo.', make:()=>L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}', {maxZoom:20, maxNativeZoom:16, attribution:usgsAttr})},
-  topo:  {name:'Topo today', note:'Current USGS topo with roads and names.', make:()=>L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}', {maxZoom:20, maxNativeZoom:16, attribution:usgsAttr})}
+  topo:  {name:'Topo today', note:'Current USGS topo with roads and names.', make:()=>L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}', {maxZoom:20, maxNativeZoom:16, attribution:usgsAttr})},
+  streets:{name:'Streets', note:'Regular road map with road names (OpenStreetMap).', make:(o)=>L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', Object.assign({maxZoom:20, maxNativeZoom:19, attribution:'© OpenStreetMap contributors'}, o||{}))}
 };
+// Re-create layers per pane so the compare side can hold its own copy
+const LAYERS_MAKE = (k, pane) => { const L0 = LAYERS[k].make(); if (pane) L0.options.pane = pane; return L0; };
 const cache = {}; const get = k => cache[k] || (cache[k] = LAYERS[k].make());
 
 const store = {
@@ -159,23 +193,59 @@ const store = {
 const map = L.map('map', {zoomControl:false, attributionControl:true, tap:true}).setView([37.0, -92.6], 9);
 L.control.scale({imperial:true, metric:false, position:'bottomright'}).addTo(map);
 
+// ---- Modes: Drive / Scout / Then vs Now / Custom ----
+const MODES = {
+  drive: 'Regular road map for getting there.',
+  scout: 'LiDAR bare earth with roads faintly on top. Look for straight lines, square pits and flat pads under the trees.',
+  then:  'Drag the round handle. Left side is the old map, right side is today. Anything on the left that is missing on the right is a lead.',
+  custom:'Pick any two layers and blend them.'
+};
+let mode = store.get('mode', 'scout'); if (!MODES[mode]) mode = 'scout';
 let base = store.get('base', 'hill'), top = store.get('top', 'old'), op = +store.get('op', 55);
 if (!LAYERS[base]) base = 'hill';
 if (top !== 'none' && !LAYERS[top]) top = 'old';
+let thenL = store.get('thenL', 'old'), thenR = store.get('thenR', 'photo');
+if (!['old','late'].includes(thenL)) thenL = 'old';
+if (!['photo','hill','streets'].includes(thenR)) thenR = 'photo';
 
-function render(){
-  Object.keys(cache).forEach(k => { if (map.hasLayer(cache[k])) map.removeLayer(cache[k]); });
-  get(base).setOpacity(1).addTo(map).setZIndex(1);
-  if (top !== 'none' && top !== base) get(top).setOpacity(op/100).addTo(map).setZIndex(2);
-  chips('baseRow', base, k => { base = k; store.set('base', k); render(); }, false);
-  chips('topRow', top, k => { top = k; store.set('top', k); render(); }, true);
-  document.getElementById('op').disabled = top === 'none' || top === base;
-  document.getElementById('note').textContent = LAYERS[base].note;
+const cmpPane = map.createPane('cmp'); cmpPane.style.zIndex = 250;
+const cmpCache = {}; const getCmp = k => cmpCache[k] || (cmpCache[k] = LAYERS_MAKE(k, 'cmp'));
+let ratio = 0.5;
+const cmpLine = document.getElementById('cmpLine'), handle = document.getElementById('cmpHandle');
+
+function clearLayers(){
+  [cache, cmpCache].forEach(c => Object.keys(c).forEach(k => { if (map.hasLayer(c[k])) map.removeLayer(c[k]); }));
 }
-function chips(id, sel, onPick, withNone){
+function render(){
+  clearLayers();
+  document.querySelectorAll('.mode').forEach(b => b.setAttribute('aria-selected', b.dataset.mode === mode));
+  document.getElementById('modeNote').textContent = MODES[mode];
+  document.getElementById('thenBox').hidden = mode !== 'then';
+  document.getElementById('customBox').hidden = mode !== 'custom';
+  cmpLine.hidden = mode !== 'then';
+  let tip = '';
+  if (mode === 'drive') { get('streets').setOpacity(1).addTo(map).setZIndex(1); }
+  else if (mode === 'scout') { get('hill').setOpacity(1).addTo(map).setZIndex(1); get('streets').setOpacity(.35).addTo(map).setZIndex(2); }
+  else if (mode === 'then') {
+    get(thenL).setOpacity(1).addTo(map).setZIndex(1);
+    getCmp(thenR).setOpacity(1).addTo(map);
+    document.getElementById('cmpL').textContent = LAYERS[thenL].name;
+    document.getElementById('cmpR').textContent = LAYERS[thenR].name;
+    pick('thenLeft', ['old','late'], thenL, k => { thenL = k; store.set('thenL', k); render(); });
+    pick('thenRight', ['photo','hill','streets'], thenR, k => { thenR = k; store.set('thenR', k); render(); });
+    clip();
+  } else {
+    get(base).setOpacity(1).addTo(map).setZIndex(1);
+    if (top !== 'none' && top !== base) get(top).setOpacity(op/100).addTo(map).setZIndex(2);
+    pick('baseRow', Object.keys(LAYERS), base, k => { base = k; store.set('base', k); render(); });
+    pick('topRow', ['none'].concat(Object.keys(LAYERS).filter(k => k !== base)), top, k => { top = k; store.set('top', k); render(); });
+    document.getElementById('op').disabled = top === 'none' || top === base;
+    tip = LAYERS[base].note;
+  }
+  document.getElementById('note').textContent = tip;
+}
+function pick(id, keys, sel, onPick){
   const row = document.getElementById(id); row.textContent = '';
-  const keys = Object.keys(LAYERS).filter(k => !(withNone && k === base));
-  if (withNone) keys.unshift('none');
   keys.forEach(k => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'chip';
@@ -185,6 +255,26 @@ function chips(id, sel, onPick, withNone){
     row.appendChild(b);
   });
 }
+document.querySelectorAll('.mode').forEach(b => b.onclick = () => { mode = b.dataset.mode; store.set('mode', mode); render(); });
+
+// Swipe compare: clip the right-hand layer to the right of the handle
+function clip(){
+  if (mode !== 'then') { cmpPane.style.clip = ''; return; }
+  const size = map.getSize();
+  const nw = map.containerPointToLayerPoint([0, 0]), se = map.containerPointToLayerPoint(size);
+  const x = nw.x + size.x * ratio;
+  cmpPane.style.clip = 'rect(' + nw.y + 'px,' + se.x + 'px,' + se.y + 'px,' + x + 'px)';
+  cmpLine.style.left = (ratio * 100) + '%';
+}
+map.on('move zoom resize zoomend', clip);
+handle.addEventListener('pointerdown', e => {
+  e.preventDefault(); e.stopPropagation(); handle.setPointerCapture(e.pointerId);
+  const moveTo = ev => { ratio = Math.min(.95, Math.max(.05, ev.clientX / window.innerWidth)); clip(); };
+  const up = () => { handle.removeEventListener('pointermove', moveTo); handle.removeEventListener('pointerup', up); };
+  handle.addEventListener('pointermove', moveTo); handle.addEventListener('pointerup', up);
+});
+L.DomEvent.disableClickPropagation(cmpLine);
+
 const opIn = document.getElementById('op'), opOut = document.getElementById('opv');
 opIn.value = op; opOut.textContent = op + '%';
 opIn.oninput = () => { op = +opIn.value; opOut.textContent = op + '%'; store.set('op', op); if (top !== 'none' && cache[top]) cache[top].setOpacity(op/100); };
@@ -253,7 +343,7 @@ map.on('click', () => { res.hidden = true; });
 
 // Collapse sheet
 const sheet = document.getElementById('sheet'), tg = document.getElementById('toggle');
-function setMin(min){ sheet.classList.toggle('min', min); tg.textContent = min ? 'Layers' : 'Hide'; tg.setAttribute('aria-expanded', !min); store.set('min', min ? '1' : ''); }
+function setMin(min){ sheet.classList.toggle('min', min); tg.textContent = min ? 'More' : 'Hide'; tg.setAttribute('aria-expanded', !min); store.set('min', min ? '1' : ''); }
 tg.onclick = () => setMin(!sheet.classList.contains('min'));
 setMin(store.get('min', '') === '1');
 
